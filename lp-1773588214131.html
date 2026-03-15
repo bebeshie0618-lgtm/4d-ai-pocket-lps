@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家事の合間に、スマホひとつで収入の柱をつくる</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:#0a0a1a;color:#e8e8e8;line-height:1.8;font-weight:300}
+a{color:#d4af37;text-decoration:none}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px;background:linear-gradient(135deg,#0a0a1a 0%,#0d1530 50%,#0a0a1a 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(212,175,55,0.08) 0%,transparent 70%)}
+.hero-inner{max-width:860px;position:relative;z-index:1}
+.hero-eyebrow{font-size:11px;letter-spacing:.25em;color:#d4af37;text-transform:uppercase;margin-bottom:24px}
+.hero h1{font-size:clamp(28px,5vw,60px);font-weight:700;line-height:1.3;color:#fff;margin-bottom:20px}
+.hero h1 span{color:#d4af37}
+.hero-sub{font-size:clamp(14px,2vw,18px);color:#aaa;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto}
+.btn-primary{display:inline-block;padding:18px 52px;background:linear-gradient(135deg,#d4af37,#f0c844);color:#0a0a1a;font-size:16px;font-weight:700;border-radius:4px;letter-spacing:.1em;transition:all .3s;border:none;cursor:pointer}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(212,175,55,.4)}
+
+/* Sections */
+section{padding:100px 24px}
+.section-inner{max-width:1000px;margin:0 auto}
+.section-label{font-size:11px;letter-spacing:.25em;color:#d4af37;text-transform:uppercase;margin-bottom:16px}
+.section-title{font-size:clamp(22px,3.5vw,38px);font-weight:700;color:#fff;margin-bottom:48px;line-height:1.4}
+
+/* Problem */
+.problem-section{background:#0d0d20}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:40px}
+.card{background:#13132a;border:1px solid #1e1e3a;border-radius:8px;padding:28px;transition:border-color .3s}
+.card:hover{border-color:#d4af37}
+.card-icon{font-size:28px;margin-bottom:12px;color:#c0392b}
+.card p{font-size:14px;color:#ccc;line-height:1.8}
+
+/* Solution */
+.solution-section{background:#0a0a1a}
+.solution-box{background:linear-gradient(135deg,#13132a,#0d1530);border:1px solid #d4af3730;border-radius:12px;padding:48px;max-width:720px;margin:0 auto;text-align:center}
+.solution-box p{font-size:16px;line-height:2;color:#ddd}
+
+/* Features */
+.features-section{background:#0d0d20}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.feature-card{background:#13132a;border:1px solid #1e1e3a;border-top:3px solid #d4af37;border-radius:8px;padding:32px;transition:transform .3s}
+.feature-card:hover{transform:translateY(-4px)}
+.feature-card h3{font-size:18px;font-weight:700;color:#d4af37;margin-bottom:12px}
+.feature-card p{font-size:14px;color:#bbb;line-height:1.8}
+
+/* Testimonials */
+.testimonials-section{background:#0a0a1a}
+.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.testimonial-card{background:#13132a;border:1px solid #1e1e3a;border-radius:12px;padding:32px}
+.result-badge{display:inline-block;background:linear-gradient(135deg,#d4af37,#f0c844);color:#0a0a1a;font-size:13px;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:16px}
+.testimonial-text{font-size:15px;color:#ddd;line-height:2;margin-bottom:16px;font-style:italic}
+.testimonial-name{font-size:13px;color:#888;letter-spacing:.05em}
+
+/* Price */
+.price-section{background:#0d0d20;text-align:center}
+.price-box{background:#13132a;border:2px solid #d4af37;border-radius:12px;padding:56px 40px;max-width:560px;margin:0 auto}
+.price-label{font-size:13px;letter-spacing:.15em;color:#d4af37;margin-bottom:12px}
+.price-value{font-size:clamp(36px,6vw,72px);font-weight:700;color:#fff;line-height:1}
+.price-note{font-size:13px;color:#888;margin-top:12px}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,#0d1530,#1a1040);text-align:center;padding:120px 24px}
+.cta-section h2{font-size:clamp(22px,4vw,42px);font-weight:700;color:#fff;margin-bottom:16px}
+.cta-section p{font-size:15px;color:#aaa;margin-bottom:48px}
+
+/* Footer */
+footer{background:#060610;border-top:1px solid #1e1e3a;padding:40px 24px;text-align:center;font-size:12px;color:#555;letter-spacing:.05em}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:640px){
+  section{padding:60px 16px}
+  .solution-box{padding:32px 20px}
+  .price-box{padding:40px 24px}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Limited Offer</p>
+    <h1>家事の合間に、スマホひとつで収入の柱をつくる</h1>
+    <p class="hero-sub">副業経験ゼロの主婦が3ヶ月で27万円を達成した新しいアフィリエイト</p>
+    <a href="#" class="btn-primary">無料オンライン説明会に参加する</a>
+  </div>
+</section>
+
+<section class="problem-section">
+  <div class="section-inner">
+    <p class="section-label">Problem</p>
+    <h2 class="section-title">こんなお悩みはありませんか？</h2>
+    <div class="cards-grid">
+      <div class="card fade-in">
+        <div class="card-icon">✕</div>
+        <p>子育てや家事に追われて働きに出る時間がない</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-icon">✕</div>
+        <p>パートに出ても時給は低く、体力的にも限界を感じている</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-icon">✕</div>
+        <p>将来の教育費や老後資金に漠然とした不安がある</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-icon">✕</div>
+        <p>副業に興味はあるけれど、何から始めればいいかわからない</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-icon">✕</div>
+        <p>SNSやブログは難しそうで、自分にできる気がしない</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-icon">✕</div>
+        <p>夫の収入だけに頼る生活から抜け出したい</p>
+      </div></div>
+  </div>
+</section>
+
+<section class="solution-section">
+  <div class="section-inner">
+    <p class="section-label">Solution</p>
+    <h2 class="section-title" style="text-align:center">その悩み、解決できます</h2>
+    <div class="solution-box fade-in">
+      <p>特別なスキルや経験は一切不要です。スマホがあれば、家事や育児のスキマ時間を活用して収益化できる仕組みをお伝えします。初心者でも迷わず進められるステップバイステップのカリキュラムと、わからないことはすぐに質問できるサポート体制で、あなたを収益化まで導きます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="section-inner">
+    <p class="section-label">Features</p>
+    <h2 class="section-title">選ばれる3つの理由</h2>
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <h3>完全初心者向けカリキュラム</h3>
+        <p>パソコンが苦手でも大丈夫。スマホ操作ができれば始められる、ゼロから学べる動画講座をご用意しています。専門用語もすべて解説するので安心です。</p>
+      </div>
+      <div class="feature-card fade-in">
+        <h3>スキマ時間で実践できる仕組み</h3>
+        <p>1日30分からスタート可能。お子さんのお昼寝中や家事の合間など、あなたのペースで無理なく取り組めます。</p>
+      </div>
+      <div class="feature-card fade-in">
+        <h3>回数無制限の個別サポート</h3>
+        <p>わからないことはLINEでいつでも質問OK。一人で悩まず、専任スタッフがあなたの疑問を解消します。</p>
+      </div></div>
+  </div>
+</section>
+
+<section class="testimonials-section">
+  <div class="section-inner">
+    <p class="section-label">Testimonials</p>
+    <h2 class="section-title">お客様の声</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card fade-in">
+        <div class="result-badge">開始3ヶ月でトータル27万円の収益を達成</div>
+        <p class="testimonial-text">"副業なんて自分には無理だと思っていました。でも、動画を見ながら言われた通りに進めるだけで、本当に収益が出たんです。子どもが寝た後の1時間だけで取り組んでいます。"</p>
+        <p class="testimonial-name">— 田中 美咲さん（38歳・専業主婦）</p>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="result-badge">2ヶ月目から毎月5万円以上の安定収入</div>
+        <p class="testimonial-text">"パート代だけでは足りず、何か始めたいとずっと思っていました。最初は半信半疑でしたが、サポートが手厚くて一人じゃないと感じられたのが大きかったです。"</p>
+        <p class="testimonial-name">— 佐藤 由美子さん（42歳・パート主婦）</p>
+      </div></div>
+  </div>
+</section>
+
+<section class="price-section">
+  <div class="section-inner">
+    <p class="section-label">Price</p>
+    <h2 class="section-title">ご案内価格</h2>
+    <div class="price-box fade-in">
+      <p class="price-label">特別価格</p>
+      <p class="price-value">300,000円</p>
+      <p class="price-note">※税込 / 分割払い対応可</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>今すぐ、人生を変える一歩を</h2>
+  <p>まずは無料相談からお気軽にどうぞ</p>
+  <a href="#" class="btn-primary">無料オンライン説明会に参加する</a>
+</section>
+
+<footer>
+  <p>Copyright &copy; 2026 All Rights Reserved.</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') })
+}, { threshold: 0.12 })
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el))
+</script>
+</body>
+</html>

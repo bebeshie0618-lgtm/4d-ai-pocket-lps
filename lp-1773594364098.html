@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>偏差値40台からでも早慶・国立に合格できる英語力が身につく</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:#000;color:#f0f0f0;line-height:1.9;font-weight:300;padding-top:48px}
+
+/* 固定緊急バナー */
+.urgent-bar{position:fixed;top:0;left:0;right:0;z-index:9999;background:#ff0000;color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:700;letter-spacing:.05em;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.85}}
+
+/* Shared */
+.wrap{max-width:780px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+.red{color:#ff0000}
+.yellow{color:#ffff00}
+.big{font-size:clamp(26px,5vw,56px);font-weight:900;line-height:1.25}
+.sub{font-size:clamp(14px,2vw,18px);color:#ccc;margin-top:12px}
+
+/* Hero */
+.hero{background:#000;text-align:center;padding:80px 20px 100px;border-bottom:3px solid #ff0000}
+.hero-tag{display:inline-block;background:#ff0000;color:#fff;font-size:11px;font-weight:700;letter-spacing:.2em;padding:4px 14px;margin-bottom:20px}
+.hero h1{font-size:clamp(22px,4.5vw,50px);font-weight:900;line-height:1.3;color:#fff;margin-bottom:16px}
+.hero-sub{font-size:clamp(13px,2vw,16px);color:#bbb;margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto}
+.btn-sales{display:inline-block;padding:20px 56px;background:#ff0000;color:#fff;font-size:clamp(15px,2.5vw,20px);font-weight:900;border-radius:4px;letter-spacing:.05em;transition:all .3s;border:none;cursor:pointer;text-decoration:none}
+.btn-sales:hover{background:#cc0000;transform:scale(1.03)}
+.btn-wrapper{text-align:center;margin:48px 0}
+
+/* Problem */
+.problem-section{background:#0a0000}
+.problem-section h2{color:#fff;font-size:clamp(18px,3vw,32px);font-weight:900;margin-bottom:32px}
+.problem-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.problem-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:#ddd;padding:16px;background:#110000;border-left:3px solid #ff0000;border-radius:0 4px 4px 0}
+.x-mark{color:#ff0000;font-size:22px;font-weight:900;flex-shrink:0;line-height:1.4}
+.connect{color:#ffff00;font-size:clamp(15px,2.5vw,20px);font-weight:700;text-align:center;margin-top:32px;padding:20px;border:2px dashed #ffff00}
+
+/* Cause box */
+.cause-section{background:#000;padding:80px 0}
+.cause-box{background:#0d0000;border:2px solid #ff0000;border-radius:8px;padding:40px;text-align:center;max-width:680px;margin:0 auto}
+.cause-box h2{font-size:clamp(18px,3vw,30px);font-weight:900;color:#ff0000;margin-bottom:20px}
+.cause-box p{font-size:clamp(14px,2vw,17px);line-height:2;color:#ddd}
+.cause-box .highlight{background:#ffff00;color:#000;padding:2px 6px;font-weight:700}
+
+/* Evidence */
+.evidence-section{background:#050505}
+.evidence-section h2{color:#fff;font-size:clamp(18px,3vw,32px);font-weight:900;margin-bottom:32px;text-align:center}
+.num-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-top:32px}
+.num-card{background:#0a0a0a;border:1px solid #ff0000;border-radius:8px;padding:28px;text-align:center}
+.num-card .num{font-size:clamp(32px,5vw,52px);font-weight:900;color:#ff0000;line-height:1}
+.num-card .label{font-size:12px;color:#888;margin-top:8px;letter-spacing:.05em}
+
+/* Testimonials */
+.voice-section{background:#000}
+.voice-section h2{color:#fff;font-size:clamp(18px,3vw,32px);font-weight:900;margin-bottom:32px;text-align:center}
+.voice-item{background:#0a0000;border:1px solid #ff000030;border-radius:8px;padding:28px;margin-bottom:20px}
+.voice-result{display:inline-block;background:#ff0000;color:#fff;font-size:13px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:12px}
+.voice-text{font-size:15px;color:#ddd;line-height:2;margin-bottom:12px;font-style:italic}
+.voice-name{font-size:13px;color:#888}
+
+/* Cost */
+.cost-section{background:#050505}
+.cost-section h2{color:#fff;font-size:clamp(18px,3vw,28px);font-weight:900;margin-bottom:24px;text-align:center}
+.cost-box{background:#0a0a0a;border:2px dashed #ffff00;border-radius:8px;padding:36px;max-width:680px;margin:0 auto}
+.cost-box h3{color:#ffff00;font-size:20px;font-weight:900;margin-bottom:16px}
+.cost-box p{font-size:15px;line-height:2;color:#ccc}
+
+/* Price */
+.price-section{background:#000;text-align:center}
+.price-section h2{color:#fff;font-size:clamp(18px,3vw,32px);font-weight:900;margin-bottom:40px}
+.price-inner{max-width:560px;margin:0 auto;background:#0a0000;border:3px solid #ff0000;border-radius:12px;padding:48px 32px}
+.price-normal{color:#666;font-size:18px;text-decoration:line-through;margin-bottom:8px}
+.price-special{font-size:clamp(40px,7vw,80px);font-weight:900;color:#ff0000;line-height:1}
+.price-note{color:#888;font-size:13px;margin-top:12px}
+
+/* FAQ */
+.faq-section{background:#050505}
+.faq-section h2{color:#fff;font-size:clamp(18px,3vw,28px);font-weight:900;margin-bottom:32px;text-align:center}
+.faq-item{margin-bottom:16px;border:1px solid #1a1a1a;border-radius:6px;overflow:hidden}
+.faq-q{background:#0a0a0a;padding:18px 20px;cursor:pointer;font-size:15px;font-weight:700;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'＋';color:#ff0000;font-size:20px;transition:.3s}
+.faq-item.open .faq-q::after{content:'－'}
+.faq-a{display:none;padding:18px 20px;font-size:14px;color:#ccc;background:#050505;line-height:2}
+.faq-item.open .faq-a{display:block}
+
+/* Closing */
+.closing-section{background:#0a0000;text-align:center;padding:100px 20px}
+.closing-section h2{font-size:clamp(20px,3.5vw,38px);font-weight:900;color:#fff;margin-bottom:20px;line-height:1.4}
+.closing-section p{font-size:15px;color:#bbb;margin-bottom:40px;max-width:560px;margin-left:auto;margin-right:auto}
+
+/* PS */
+.ps-section{background:#000;border-top:1px solid #1a1a1a;padding:60px 0}
+.ps-box{max-width:680px;margin:0 auto;padding:32px;background:#050505;border-left:4px solid #ffff00;border-radius:0 8px 8px 0}
+.ps-box p{font-size:14px;color:#bbb;line-height:2}
+.ps-box .ps-label{color:#ffff00;font-size:13px;font-weight:700;letter-spacing:.1em;margin-bottom:10px}
+
+footer{background:#000;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center;font-size:11px;color:#444;letter-spacing:.05em}
+
+@media(max-width:640px){
+  section{padding:60px 0}
+  .hero{padding:60px 16px 80px}
+  .cause-box,.price-inner{padding:28px 16px}
+}
+</style>
+</head>
+<body>
+
+<div class="urgent-bar">
+  ⚠️ 残りわずか — お申し込みが殺到しています。定員になり次第、受付を終了します
+</div>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-tag">SPECIAL OFFER</div>
+    <h1 class="big">偏差値40台からでも早慶・国立に合格できる英語力が身につく</h1>
+    <p class="hero-sub">TOEIC800点超・英検1級・海外留学経験を持つ講師が、あなたの志望校合格まで徹底伴走</p>
+    <div class="btn-wrapper">
+      <a href="#" class="btn-sales">無料学習相談に今すぐ申し込む →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 共感リスト -->
+<section class="problem-section">
+  <div class="wrap">
+    <h2>もしひとつでも当てはまるなら<br>最後まで読んでください</h2>
+    <ul class="problem-list"><li><span class="x-mark">✗</span>英語の長文読解で時間が足りず、いつも最後まで解けない</li><li><span class="x-mark">✗</span>単語を覚えても文法が理解できず、点数に結びつかない</li><li><span class="x-mark">✗</span>塾に通っているのに模試の偏差値が上がらない</li><li><span class="x-mark">✗</span>リスニングが苦手で、共通テストの英語が不安</li><li><span class="x-mark">✗</span>周りは成績が伸びているのに自分だけ取り残されている気がする</li><li><span class="x-mark">✗</span>志望校のレベルと今の実力の差に焦りを感じている</li></ul>
+    <div class="connect">
+      あなたが稼げないのは、才能でも頭の良さでもありません。<br>
+      <span class="red">「正しいやり方」と「正しいサポート」</span>がなかっただけです。
+    </div>
+  </div>
+</section>
+
+<!-- 犯人特定 -->
+<section class="cause-section">
+  <div class="wrap">
+    <div class="cause-box">
+      <h2>あなたのせいでは<br>ありません</h2>
+      <p>
+        これまで何度挑戦しても結果が出なかったとしたら、<br>
+        それは<span class="highlight">方法が間違っていた</span>だけです。<br><br>
+        海外留学で培った「使える英語力」と受験英語のノウハウを融合した独自メソッドで指導します。単なる暗記ではなく、英語の本質を理解することで、初見の長文でも読み解ける力を3ヶ月で身につけます。TOEIC800点以上・英検1級を取得した講師が、あなたの弱点を徹底分析し、志望校合格への最短ルートを一緒に作り上げます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 実績・特徴 -->
+<section class="evidence-section">
+  <div class="wrap">
+    <h2>なぜ<span class="red">これだけ</span>結果が出るのか</h2>
+    <div>
+    <div class="feature-item">
+      <div class="feature-num">1</div>
+      <div><h3>志望校別の完全オーダーメイドカリキュラム</h3><p>早慶・MARCH・国立それぞれの出題傾向を熟知した講師が、あなたの現状と志望校のギャップを分析。ムダのない最短合格プランを設計します。</p></div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-num">2</div>
+      <div><h3>英語の本質がわかる「読解脳」トレーニング</h3><p>単語の丸暗記ではなく、英語の構造を理解する独自メソッド。初見の長文でも「なぜそう訳せるのか」が自分で説明できるレベルまで引き上げます。</p></div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-num">3</div>
+      <div><h3>毎日の学習進捗管理と無制限の質問対応</h3><p>LINEでいつでも質問OK。わからないところを放置せず、その日のうちに解決。週次の進捗面談で学習計画のズレも即修正します。</p></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- お客様の声 -->
+<section class="voice-section">
+  <div class="wrap">
+    <h2>受講者の<span class="red">リアルな声</span></h2>
+    
+    <div class="voice-item">
+      <div class="voice-result">偏差値42→67にUP、早稲田大学商学部に現役合格</div>
+      <p class="voice-text">「高2の冬まで英語の偏差値は42でした。長文を見るだけで嫌になっていましたが、先生の授業を受けてから英語の構造が見えるようになり、読むのが楽しくなりました。」</p>
+      <p class="voice-name">高橋 健太さん（高3・私立高校）</p>
+    </div>
+    <div class="voice-item">
+      <div class="voice-result">共通テスト英語リスニング 62点→91点、筑波大学合格</div>
+      <p class="voice-text">「共通テストのリスニングが苦手で、いつも6割しか取れませんでした。先生に発音の仕組みから教わり、聞こえ方が全く変わりました。本番では自信を持って臨めました。」</p>
+      <p class="voice-name">山田 美咲さん（高3・公立高校）</p>
+    </div>
+  </div>
+</section>
+
+<!-- コスト計算 -->
+<section class="cost-section">
+  <div class="wrap">
+    <h2>「何もしない」ことのコストを<br>考えたことはありますか？</h2>
+    <div class="cost-box">
+      <h3>今のまま過ごす5年間のコスト</h3>
+      <p>
+        「またいつか」「もう少し準備してから」——<br>
+        この思考パターンが、1年後も3年後も同じ場所にいる原因です。<br><br>
+        時間はお金で買えますが、お金は時間では買えません。<br>
+        <span class="yellow">戦略なき努力はただの自己満足。</span><br>
+        今すぐ正しい投資をした人間だけが、人生を変えられます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 価格 -->
+<section class="price-section">
+  <div class="wrap">
+    <h2>ご案内価格</h2>
+    <div class="price-inner">
+      <p class="price-normal">通常価格 ¥500,000</p>
+      <p class="price-special">月額78,000円（税込）</p>
+      <p class="price-note">※分割払い対応可 / 今すぐお申し込みで特典付き</p>
+      <div class="btn-wrapper" style="margin:32px 0 0">
+        <a href="#" class="btn-sales">無料学習相談に今すぐ申し込む →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="wrap">
+    <h2>よくある質問</h2>
+    <div class="faq-item">
+      <div class="faq-q">経験ゼロでも大丈夫ですか？</div>
+      <div class="faq-a">はい、問題ありません。ゼロから丁寧にサポートします。スキルや知識よりも、行動力の方が重要です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">忙しい会社員でも続けられますか？</div>
+      <div class="faq-a">1日30分〜1時間から始められる設計になっています。副業として無理なく進められます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">本当に成果が出ますか？</div>
+      <div class="faq-a">成果は行動量に比例します。サポートは徹底的に行いますが、最終的には皆さんの行動次第です。やり切る覚悟がある方には自信を持っておすすめします。</div>
+    </div>
+  </div>
+</section>
+
+<!-- クロージング -->
+<section class="closing-section">
+  <div class="wrap">
+    <h2>今まで頑張ってきた<br>あなたの努力は<br><span class="red">絶対に無駄ではない</span></h2>
+    <p>あとは正しい場所でやり直すだけです。<br>迷うということは、やりたい証拠。<br>本当に興味がないなら、とっくにこのページを閉じているはずです。</p>
+    <a href="#" class="btn-sales">無料学習相談に今すぐ申し込む →</a>
+  </div>
+</section>
+
+<!-- PS -->
+<section class="ps-section">
+  <div class="wrap">
+    <div class="ps-box">
+      <p class="ps-label">P.S.</p>
+      <p>
+        明日以降、このページからお申し込みできなくなる可能性があります。<br>
+        「あの時やっておけばよかった」という後悔だけはしてほしくないので、<br>
+        今すぐ決断してください。
+      </p>
+    </div>
+    <div class="ps-box" style="margin-top:16px">
+      <p class="ps-label">P.P.S.</p>
+      <p>
+        まずは無料相談だけでも構いません。<br>
+        話を聞いた上で決めてください。それだけでも大きな一歩です。
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Copyright &copy; 2026 All Rights Reserved.</p>
+</footer>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement
+    item.classList.toggle('open')
+  })
+})
+</script>
+</body>
+</html>

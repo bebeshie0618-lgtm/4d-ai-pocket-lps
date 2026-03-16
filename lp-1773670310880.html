@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>【3ヶ月で人生が変わった】迷える20代会社員の94%が「本当の自分」を見つけたキャリアコーチング</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#0a0a1a;--bg2:#0d0d20;--bg3:#13132a;
+  --accent:#d4af37;--accent2:#f0c844;--accent-text:#0a0a1a;
+  --border:#1e1e3a;--text:#e8e8e8;--text-muted:#aaaaaa;
+  --accent-glow:rgba(212,175,55,0.10);--accent-shadow:rgba(212,175,55,0.4);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:var(--bg1);color:var(--text);
+  line-height:1.85;font-weight:300;
+  padding-top:72px;padding-bottom:72px;
+}
+a{color:var(--accent);text-decoration:none}
+img{max-width:100%;height:auto}
+
+/* ===== NAV ===== */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:20px 40px;display:flex;align-items:center;justify-content:space-between;
+  transition:all .35s ease;
+}
+.site-nav.scrolled{
+  background:rgba(10,10,26,0.92);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  padding:14px 40px;
+  box-shadow:0 2px 24px rgba(0,0,0,0.4);
+}
+.nav-logo{font-size:15px;font-weight:700;color:var(--text);letter-spacing:.05em}
+.nav-cta{
+  padding:10px 24px;background:var(--accent);color:var(--accent-text);
+  font-size:13px;font-weight:700;border-radius:4px;letter-spacing:.05em;
+  transition:all .3s;border:none;cursor:pointer;
+}
+.nav-cta:hover{opacity:.85;transform:translateY(-1px)}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:100px 24px 80px;
+  background:linear-gradient(to bottom,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.3) 60%,rgba(0,0,0,0.65) 100%),url(https://picsum.photos/seed/business/1200/800) center/cover no-repeat fixed;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 60%,var(--accent-glow) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-inner{max-width:900px;position:relative;z-index:1}
+.hero-badge{
+  display:inline-block;padding:6px 20px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:var(--accent-text);font-size:11px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;border-radius:2px;
+  margin-bottom:28px;
+}
+.hero h1{
+  font-size:clamp(26px,5.5vw,64px);font-weight:900;
+  line-height:1.25;color:var(--text);margin-bottom:24px;
+  letter-spacing:-.01em;
+}
+.hero h1 em{color:var(--accent);font-style:normal}
+.hero-sub{
+  font-size:clamp(14px,2vw,19px);color:var(--text-muted);
+  margin-bottom:48px;max-width:640px;margin-left:auto;margin-right:auto;
+  line-height:2;
+}
+.btn-primary{
+  display:inline-block;padding:18px 56px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:var(--accent-text);font-size:16px;font-weight:700;
+  border-radius:4px;letter-spacing:.1em;
+  transition:all .3s;border:none;cursor:pointer;
+  box-shadow:0 4px 24px var(--accent-shadow);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 36px var(--accent-shadow)}
+.hero-trust{font-size:12px;color:var(--text-muted);margin-top:20px;letter-spacing:.05em}
+
+/* ===== STATS ===== */
+.stats-section{
+  background:var(--accent);
+  padding:56px 24px;
+}
+.stats-section .section-inner{max-width:1040px;margin:0 auto}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:0;
+}
+.stat-item{
+  text-align:center;padding:24px 16px;
+  border-right:1px solid rgba(255,255,255,.2);
+}
+.stat-item:last-child{border-right:none}
+.stat-num{
+  font-size:clamp(28px,4.5vw,52px);font-weight:900;
+  color:var(--accent-text);line-height:1.1;margin-bottom:6px;
+}
+.stat-label{font-size:11px;color:var(--accent-text);opacity:.8;letter-spacing:.1em}
+
+/* ===== SECTIONS SHARED ===== */
+section{padding:100px 24px}
+.section-inner{max-width:1040px;margin:0 auto}
+.eyebrow{
+  font-size:10px;letter-spacing:.3em;color:var(--accent);
+  text-transform:uppercase;margin-bottom:14px;font-weight:500;
+}
+.section-title{
+  font-size:clamp(22px,3.5vw,40px);font-weight:900;
+  color:var(--text);margin-bottom:56px;line-height:1.35;
+}
+
+/* ===== PROBLEM ===== */
+.problem-section{background:var(--bg2)}
+.problem-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;
+}
+.problem-card{
+  background:var(--bg3);border:1px solid var(--border);border-radius:10px;
+  padding:28px 28px 28px 24px;display:flex;align-items:flex-start;gap:16px;
+  transition:border-color .3s,transform .3s;
+}
+.problem-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.problem-icon-wrap{
+  width:36px;height:36px;border-radius:50%;background:rgba(220,40,40,.12);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.problem-icon{font-size:15px;font-weight:900;color:#e53e3e}
+.problem-card p{font-size:15px;color:var(--text);line-height:1.9}
+.problem-conclusion{
+  margin-top:48px;padding:32px 40px;
+  background:linear-gradient(135deg,var(--bg3),var(--bg2));
+  border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);
+  border-radius:10px;text-align:center;
+}
+.problem-conclusion p{font-size:18px;color:var(--text-muted);line-height:2}
+.problem-conclusion strong{color:var(--accent);font-weight:700}
+
+/* ===== SOLUTION ===== */
+.solution-section{background:var(--bg1)}
+.solution-box{
+  background:linear-gradient(135deg,var(--bg3),var(--bg2));
+  border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);
+  border-radius:14px;padding:56px 48px;max-width:760px;margin:0 auto;
+  text-align:center;
+}
+.solution-box p{font-size:17px;line-height:2.1;color:var(--text)}
+
+/* ===== FEATURES ===== */
+.features-section{background:var(--bg2)}
+.features-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;
+}
+.feature-card{
+  background:var(--bg3);border:1px solid var(--border);
+  border-top:3px solid var(--accent);border-radius:10px;
+  padding:36px 28px;transition:transform .3s,box-shadow .3s;
+  position:relative;
+}
+.feature-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px var(--accent-glow)}
+.feature-num{
+  font-size:10px;letter-spacing:.2em;color:var(--accent);
+  font-weight:700;margin-bottom:16px;
+}
+.feature-icon{font-size:32px;margin-bottom:14px}
+.feature-card h3{font-size:17px;font-weight:700;color:var(--text);margin-bottom:12px}
+.feature-card p{font-size:14px;color:var(--text-muted);line-height:1.9}
+.product-img-wrap{text-align:center;margin-bottom:48px}
+.product-img-wrap img{max-width:680px;width:100%;border-radius:14px;border:1px solid var(--border)}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-section{background:var(--bg1)}
+.testimonials-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;
+}
+.testimonial-card{
+  background:var(--bg3);border:1px solid var(--border);border-radius:14px;
+  padding:32px;transition:transform .3s;
+}
+.testimonial-card:hover{transform:translateY(-4px)}
+.testimonial-header{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.testimonial-photo{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--accent)}
+.testimonial-avatar-placeholder{
+  width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:700;color:var(--accent-text);flex-shrink:0;
+}
+.testimonial-result{
+  display:inline-block;padding:4px 12px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:var(--accent-text);font-size:12px;font-weight:700;
+  border-radius:20px;margin-bottom:4px;
+}
+.testimonial-name{font-size:13px;color:var(--text-muted)}
+.testimonial-text{font-size:15px;color:var(--text);line-height:2;font-style:italic}
+
+/* ===== STEPS ===== */
+.steps-section{background:var(--bg2)}
+.steps-list{display:flex;flex-direction:column;gap:0;max-width:720px;margin:0 auto}
+.step-item{
+  display:grid;grid-template-columns:64px 2px 1fr;
+  gap:0 24px;padding-bottom:40px;
+}
+.step-item:last-child{padding-bottom:0}
+.step-num{
+  width:64px;height:64px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:var(--accent-text);font-size:13px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  letter-spacing:.05em;flex-shrink:0;
+  box-shadow:0 4px 16px var(--accent-shadow);
+}
+.step-line{
+  width:2px;background:var(--border);
+  margin:64px auto 0;
+}
+.step-item:last-child .step-line{display:none}
+.step-content{padding-top:16px}
+.step-content h3{font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px}
+.step-content p{font-size:14px;color:var(--text-muted);line-height:1.9}
+
+/* ===== FAQ ===== */
+.faq-section{background:var(--bg1)}
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--bg3);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.faq-q{
+  width:100%;background:none;border:none;cursor:pointer;
+  padding:22px 24px;display:flex;align-items:center;gap:14px;
+  text-align:left;color:var(--text);font-size:15px;font-weight:500;
+  font-family:'Noto Sans JP',sans-serif;transition:background .2s;
+}
+.faq-q:hover{background:var(--accent-glow)}
+.faq-icon{
+  width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:var(--accent-text);font-size:11px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.faq-icon-a{opacity:.7}
+.faq-q>span:nth-child(2){flex:1}
+.faq-arrow{font-size:20px;color:var(--accent);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(45deg)}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s;
+}
+.faq-item.open .faq-a{max-height:400px}
+.faq-a-inner{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:4px 24px 24px;
+}
+.faq-a-inner p{font-size:14px;color:var(--text-muted);line-height:2}
+
+/* ===== PROFILE ===== */
+.profile-section{background:var(--bg2)}
+.profile-card{
+  display:flex;align-items:flex-start;gap:40px;
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:14px;padding:48px;max-width:760px;margin:0 auto;
+}
+.profile-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);flex-shrink:0}
+.profile-avatar-placeholder{
+  width:120px;height:120px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:40px;font-weight:700;color:var(--accent-text);flex-shrink:0;
+}
+.profile-name{font-size:22px;font-weight:700;color:var(--text);margin-bottom:4px}
+.profile-title{font-size:13px;color:var(--accent);letter-spacing:.05em;margin-bottom:16px}
+.profile-bio{font-size:14px;color:var(--text-muted);line-height:2}
+
+/* ===== PRICE ===== */
+.price-section{background:var(--bg2);text-align:center}
+.price-box{
+  background:var(--bg3);border:2px solid var(--accent);
+  border-radius:14px;padding:56px 40px;max-width:560px;margin:0 auto;
+}
+.price-label{font-size:12px;letter-spacing:.2em;color:var(--accent);margin-bottom:12px;font-weight:700}
+.price-value{font-size:clamp(36px,6vw,72px);font-weight:900;color:var(--text);line-height:1.1}
+.price-note{font-size:13px;color:var(--text-muted);margin-top:12px}
+
+/* ===== FINAL CTA ===== */
+.cta-section{
+  background:linear-gradient(135deg,var(--bg2),var(--bg3));
+  text-align:center;padding:120px 24px;
+  position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 50%,var(--accent-glow) 0%,transparent 65%);
+}
+.cta-section .section-inner{position:relative;z-index:1}
+.cta-urgency{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 24px;background:rgba(220,40,40,.08);
+  border:1px solid rgba(220,40,40,.3);border-radius:4px;
+  color:#e53e3e;font-size:13px;font-weight:700;
+  margin-bottom:40px;letter-spacing:.05em;
+}
+.cta-section h2{
+  font-size:clamp(24px,4vw,48px);font-weight:900;
+  color:var(--text);margin-bottom:16px;line-height:1.35;
+}
+.cta-section p.cta-sub{
+  font-size:14px;color:var(--text-muted);margin-top:20px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--bg1);border-top:1px solid var(--border);
+  padding:40px 24px;text-align:center;
+  font-size:11px;color:var(--text-muted);letter-spacing:.05em;
+  line-height:2;
+}
+
+/* ===== STICKY BOTTOM CTA ===== */
+.sticky-cta{
+  position:fixed;bottom:0;left:0;right:0;z-index:999;
+  background:var(--accent);
+  display:flex;align-items:center;justify-content:center;gap:24px;
+  padding:14px 24px;
+  box-shadow:0 -4px 24px var(--accent-shadow);
+  transform:translateY(100%);transition:transform .4s ease;
+}
+.sticky-cta.visible{transform:translateY(0)}
+.sticky-cta-text{font-size:13px;color:var(--accent-text);font-weight:500;display:none}
+.sticky-cta-btn{
+  padding:10px 32px;background:var(--accent-text);color:var(--accent);
+  font-size:14px;font-weight:900;border-radius:4px;
+  letter-spacing:.05em;border:none;cursor:pointer;white-space:nowrap;
+  transition:opacity .2s;
+}
+.sticky-cta-btn:hover{opacity:.85}
+
+/* ===== ANIMATIONS ===== */
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.fade-in.visible{opacity:1;transform:none}
+.fade-in:nth-child(2){transition-delay:.1s}
+.fade-in:nth-child(3){transition-delay:.2s}
+.fade-in:nth-child(4){transition-delay:.3s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .site-nav{padding:14px 20px}
+  .site-nav.scrolled{padding:12px 20px}
+  section{padding:72px 20px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.2)}
+  .profile-card{flex-direction:column;align-items:center;text-align:center;padding:32px 24px}
+  .solution-box{padding:36px 24px}
+  .price-box{padding:40px 24px}
+  .step-item{grid-template-columns:48px 2px 1fr}
+  .step-num{width:48px;height:48px;font-size:11px}
+  .sticky-cta-text{display:block}
+}
+@media(max-width:480px){
+  body{padding-top:60px}
+  .hero{min-height:calc(100svh - 60px)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- ナビゲーションバー -->
+<nav class="site-nav" id="siteNav">
+  <div class="nav-logo">コーチング</div>
+  <a href="#" class="nav-cta">【残り5名】まずは無料相談で本当の自分を見つける第一歩を</a>
+</nav>
+
+<!-- ヒーローセクション -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Special Offer</div>
+    <h1>【<em>3ヶ月で人生が変わった</em>】迷える20代会社員の94%が「<em>本当の自分</em>」を見つけたキャリアコーチング</h1>
+    <p class="hero-sub">完璧なキャリアチェンジを実現した累計1,200名以上の実績。あなたの「このままでいいのか」という不安を、確信に変えます。</p>
+    <a href="#" class="btn-primary">【残り5名】まずは無料相談で本当の自分を見つける第一歩を</a>
+    <p class="hero-trust">まずは無料相談・完全オンライン対応</p>
+  </div>
+</section>
+
+
+<section class="stats-section">
+  <div class="section-inner">
+    <div class="stats-grid">
+      
+      <div class="stat-item fade-in">
+        <div class="stat-num" data-target="1,200名">1,200名</div>
+        <div class="stat-label">累計受講者数</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-num" data-target="94%">94%</div>
+        <div class="stat-label">自己発見達成率</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-num" data-target="3ヶ月">3ヶ月</div>
+        <div class="stat-label">平均変化実感期間</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-num" data-target="4.8">4.8</div>
+        <div class="stat-label">★平均評価</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="problem-section">
+  <div class="section-inner">
+    <p class="eyebrow">PROBLEM</p>
+    <h2 class="section-title">こんなお悩みはありませんか？</h2>
+    <div class="problem-grid">
+      
+      <div class="problem-card fade-in">
+        <div class="problem-icon-wrap"><span class="problem-icon">✕</span></div>
+        <p>毎朝、会社に行くのが憂鬱で「このままでいいのか」という焦りが消えない</p>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="problem-icon-wrap"><span class="problem-icon">✕</span></div>
+        <p>やりたいことがわからず、将来に対する漠然とした不安を抱えている</p>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="problem-icon-wrap"><span class="problem-icon">✕</span></div>
+        <p>周りは転職や起業で輝いているのに、自分だけ取り残されている気がする</p>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="problem-icon-wrap"><span class="problem-icon">✕</span></div>
+        <p>自分の強みや本当にやりたいことが見えず、毎日がただ過ぎていく虚しさを感じる</p>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="problem-icon-wrap"><span class="problem-icon">✕</span></div>
+        <p>相談できる人がいなくて、一人で悩みを抱え込んでいる孤独感がある</p>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="problem-icon-wrap"><span class="problem-icon">✕</span></div>
+        <p>「このまま10年後も同じ生活？」と考えると、背筋が凍る恐怖を感じる</p>
+      </div>
+    </div>
+    <div class="problem-conclusion fade-in">
+      <p>そのお悩み、すべて<strong>解決できます。</strong></p>
+    </div>
+  </div>
+</section>
+
+
+<section class="solution-section">
+  <div class="section-inner">
+    <p class="eyebrow">SOLUTION</p>
+    <h2 class="section-title" style="text-align:center">その悩み、解決できます</h2>
+    <div class="solution-box fade-in">
+      <p>あなたが迷っているのは、能力がないからではありません。「本当の自分」をまだ知らないだけです。完璧なキャリアチェンジを実現してきた専属コーチが、あなたの内側に眠る本当の価値観・強み・情熱を引き出し、人生の羅針盤を一緒に見つけます。</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="features-section">
+  <div class="section-inner">
+    <p class="eyebrow">REASON</p>
+    <h2 class="section-title">選ばれる4つの理由</h2>
+    
+    <div class="features-grid">
+      
+      <div class="feature-card fade-in">
+        <div class="feature-num">01</div>
+        <div class="feature-icon">🎯</div>
+        <h3>完全マンツーマン伴走</h3>
+        <p>あなた専属のプロコーチが3ヶ月間徹底サポート。週1回のセッションで確実に自己理解が深まります。</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-num">02</div>
+        <div class="feature-icon">🔑</div>
+        <h3>科学的自己分析メソッド</h3>
+        <p>心理学・脳科学に基づいた独自の診断ツールで、言語化できなかった「本当の自分」を可視化します。</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-num">03</div>
+        <div class="feature-icon">💡</div>
+        <h3>24時間LINEサポート</h3>
+        <p>セッション以外の時間も迷ったらすぐに相談OK。一人で悩まない安心の環境を提供します。</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-num">04</div>
+        <div class="feature-icon">📈</div>
+        <h3>キャリアチェンジ完全支援</h3>
+        <p>自己発見で終わらせない。転職・起業・副業など、次のアクションまで具体的にサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="testimonials-section">
+  <div class="section-inner">
+    <p class="eyebrow">VOICE</p>
+    <h2 class="section-title">お客様の声</h2>
+    <div class="testimonials-grid">
+      
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar-placeholder">田</div>
+          <div>
+            <div class="testimonial-result">3ヶ月後にHR業界へ転職成功。年収50万円アップ</div>
+            <div class="testimonial-name">田中 健太さん（28歳・元営業職）</div>
+          </div>
+        </div>
+        <p class="testimonial-text">「毎日「辞めたい」と思いながら出社していました。コーチングを受けて、自分が本当にやりたかったのは『人の成長に関わる仕事』だと気づけました。」</p>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar-placeholder">佐</div>
+          <div>
+            <div class="testimonial-result">副業でキャリアカウンセラーを開始。半年で月収+15万円</div>
+            <div class="testimonial-name">佐藤 美咲さん（26歳・元事務職）</div>
+          </div>
+        </div>
+        <p class="testimonial-text">「やりたいことがなくて、周りと比べて焦る日々でした。コーチとの対話で、自分の価値観が明確になり、人生で初めて『これだ！』と思える道が見つかりました。」</p>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar-placeholder">鈴</div>
+          <div>
+            <div class="testimonial-result">IT企業のPMへ転身。仕事満足度が10点中3→9に</div>
+            <div class="testimonial-name">鈴木 翔太さん（31歳・元エンジニア）</div>
+          </div>
+        </div>
+        <p class="testimonial-text">「技術力はあるのに、なぜか満たされない日々。コーチングで『自分は技術より人を動かす仕事が向いている』と発見。完璧なキャリアチェンジができました。」</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="steps-section">
+  <div class="section-inner">
+    <p class="eyebrow">FLOW</p>
+    <h2 class="section-title">ご利用の流れ</h2>
+    <div class="steps-list">
+      
+      <div class="step-item fade-in">
+        <div class="step-num">01</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h3>無料相談</h3>
+          <p>60分の無料セッションであなたの現状と悩みをヒアリング。相性確認もできます。</p>
+        </div>
+      </div>
+      <div class="step-item fade-in">
+        <div class="step-num">02</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h3>自己分析</h3>
+          <p>独自の診断ツールとコーチとの対話で、あなたの価値観・強み・情熱を徹底的に言語化します。</p>
+        </div>
+      </div>
+      <div class="step-item fade-in">
+        <div class="step-num">03</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h3>ビジョン設計</h3>
+          <p>「本当の自分」に基づいた理想のキャリア・人生のビジョンを一緒に描きます。</p>
+        </div>
+      </div>
+      <div class="step-item fade-in">
+        <div class="step-num">04</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h3>アクション支援</h3>
+          <p>転職・起業・副業など、ビジョン実現のための具体的な行動計画を策定し実行をサポートします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="faq-section">
+  <div class="section-inner">
+    <p class="eyebrow">FAQ</p>
+    <h2 class="section-title">よくある質問</h2>
+    <div class="faq-list">
+      
+      <div class="faq-item fade-in" id="faq-0">
+        <button class="faq-q" onclick="toggleFaq(0)">
+          <span class="faq-icon">Q</span>
+          <span>本当に3ヶ月で自分が見つかりますか？</span>
+          <span class="faq-arrow">＋</span>
+        </button>
+        <div class="faq-a" id="faq-a-0">
+          <div class="faq-a-inner">
+            <span class="faq-icon faq-icon-a">A</span>
+            <p>はい。94%の方が3ヶ月以内に「本当の自分」を発見しています。科学的メソッドと専属コーチの伴走で、着実に自己理解が深まる仕組みになっています。</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item fade-in" id="faq-1">
+        <button class="faq-q" onclick="toggleFaq(1)">
+          <span class="faq-icon">Q</span>
+          <span>仕事が忙しくても続けられますか？</span>
+          <span class="faq-arrow">＋</span>
+        </button>
+        <div class="faq-a" id="faq-a-1">
+          <div class="faq-a-inner">
+            <span class="faq-icon faq-icon-a">A</span>
+            <p>もちろんです。セッションは平日夜・土日も対応。1回60分、週1回のペースなので、忙しい会社員の方でも無理なく続けられます。</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item fade-in" id="faq-2">
+        <button class="faq-q" onclick="toggleFaq(2)">
+          <span class="faq-icon">Q</span>
+          <span>転職を考えていないのですが受けられますか？</span>
+          <span class="faq-arrow">＋</span>
+        </button>
+        <div class="faq-a" id="faq-a-2">
+          <div class="faq-a-inner">
+            <span class="faq-icon faq-icon-a">A</span>
+            <p>はい。転職がゴールではありません。今の仕事で輝く道、副業、起業など、あなたに合った選択肢を一緒に見つけます。</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item fade-in" id="faq-3">
+        <button class="faq-q" onclick="toggleFaq(3)">
+          <span class="faq-icon">Q</span>
+          <span>他のコーチングと何が違いますか？</span>
+          <span class="faq-arrow">＋</span>
+        </button>
+        <div class="faq-a" id="faq-a-3">
+          <div class="faq-a-inner">
+            <span class="faq-icon faq-icon-a">A</span>
+            <p>完璧なキャリアチェンジ実績1,200名以上の独自メソッドと、自己発見で終わらせない『行動までサポート』する点が最大の違いです。</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item fade-in" id="faq-4">
+        <button class="faq-q" onclick="toggleFaq(4)">
+          <span class="faq-icon">Q</span>
+          <span>効果がなかったらどうなりますか？</span>
+          <span class="faq-arrow">＋</span>
+        </button>
+        <div class="faq-a" id="faq-a-4">
+          <div class="faq-a-inner">
+            <span class="faq-icon faq-icon-a">A</span>
+            <p>万が一ご満足いただけない場合は、30日間の全額返金保証をご用意しています。リスクゼロで始められます。</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item fade-in" id="faq-5">
+        <button class="faq-q" onclick="toggleFaq(5)">
+          <span class="faq-icon">Q</span>
+          <span>分割払いはできますか？</span>
+          <span class="faq-arrow">＋</span>
+        </button>
+        <div class="faq-a" id="faq-a-5">
+          <div class="faq-a-inner">
+            <span class="faq-icon faq-icon-a">A</span>
+            <p>はい。最大12回までの分割払いに対応しています。月々約33,000円から始められます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="profile-section">
+  <div class="section-inner">
+    <p class="eyebrow">PROFILE</p>
+    <h2 class="section-title">プロフィール</h2>
+    <div class="profile-card fade-in">
+      <div class="profile-avatar-placeholder">山</div>
+      <div class="profile-content">
+        <h3 class="profile-name">山本 拓也</h3>
+        <p class="profile-title">キャリアコーチ / 株式会社ライフコンパス代表</p>
+        <p class="profile-bio">大手企業で10年間勤務後、自身も「本当の自分がわからない」悩みを経験。コーチングとの出会いで人生が激変し、完璧なキャリアチェンジを実現。その経験を活かし、累計1,200名以上の若手会社員の自己発見をサポート。キャリアチェンジ成功率94%。「一人でも多くの人が、本当の自分を生きられる社会を作る」をミッションに活動中。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="price-section">
+  <div class="section-inner">
+    <p class="eyebrow">PRICE</p>
+    <h2 class="section-title" style="text-align:center">ご案内価格</h2>
+    <div class="price-box fade-in">
+      <p class="price-label">特別価格</p>
+      <p class="price-value">400,000円（税込）</p>
+      <p class="price-note">※税込 / 分割払い対応可</p>
+      <a href="#" class="btn-primary" style="margin-top:32px;display:inline-block">【残り5名】まずは無料相談で本当の自分を見つける第一歩を</a>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTAセクション -->
+<section class="cta-section">
+  <div class="section-inner">
+    <div class="cta-urgency">⏰ 今月残りわずか — お早めにお申し込みください</div>
+    <h2>今すぐ、あなたの未来を<br>変える一歩を踏み出しましょう</h2>
+    <a href="#" class="btn-primary">【残り5名】まずは無料相談で本当の自分を見つける第一歩を</a>
+    <p class="cta-sub">まずは無料相談から。お気軽にどうぞ。</p>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer>
+  <p>Copyright &copy; 2026 山本 拓也</p>
+  <p style="margin-top:8px"><a href="#">プライバシーポリシー</a> | <a href="#">特定商取引法に基づく表記</a></p>
+</footer>
+
+<!-- 画面下部固定CTAバー -->
+<div class="sticky-cta" id="stickyCta">
+  <p class="sticky-cta-text">まずは無料相談から</p>
+  <a href="#" class="sticky-cta-btn">【残り5名】まずは無料相談で本当の自分を見つける第一歩を →</a>
+</div>
+
+<script>
+// ナビ スクロール効果
+var nav = document.getElementById('siteNav')
+var stickyCta = document.getElementById('stickyCta')
+window.addEventListener('scroll', function(){
+  var y = window.scrollY
+  if(y > 80){ nav.classList.add('scrolled') } else { nav.classList.remove('scrolled') }
+  if(y > window.innerHeight * 0.5){ stickyCta.classList.add('visible') } else { stickyCta.classList.remove('visible') }
+}, { passive: true })
+
+// フェードイン
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible') })
+}, { threshold: 0.1 })
+document.querySelectorAll('.fade-in').forEach(function(el){ observer.observe(el) })
+
+// 数字カウントアップ
+function runCountUp(el){
+  var raw = el.dataset.target || el.textContent
+  var num = parseFloat(raw.replace(/[^0-9.]/g,''))
+  if(isNaN(num)) return
+  var prefix = raw.match(/^[^0-9]*/)?.[0] || ''
+  var suffix = raw.match(/[^0-9.]+$/)?.[0] || ''
+  var isInt = !raw.includes('.')
+  var duration = 1800, start = performance.now()
+  function update(now){
+    var p = Math.min((now - start) / duration, 1)
+    var eased = 1 - Math.pow(1 - p, 3)
+    var cur = isInt ? Math.round(num * eased) : (num * eased).toFixed(1)
+    el.textContent = prefix + Number(cur).toLocaleString('ja-JP') + suffix
+    if(p < 1) requestAnimationFrame(update)
+  }
+  requestAnimationFrame(update)
+}
+var statObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ runCountUp(e.target); statObserver.unobserve(e.target) }
+  })
+}, { threshold: 0.3 })
+document.querySelectorAll('.stat-num').forEach(function(el){ statObserver.observe(el) })
+
+// FAQ アコーディオン
+function toggleFaq(i){
+  var item = document.getElementById('faq-'+i)
+  var isOpen = item.classList.contains('open')
+  document.querySelectorAll('.faq-item.open').forEach(function(it){ it.classList.remove('open') })
+  if(!isOpen) item.classList.add('open')
+}
+</script>
+</body>
+</html>

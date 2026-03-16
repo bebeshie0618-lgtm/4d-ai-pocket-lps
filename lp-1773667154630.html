@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>【累計10,000名が感動】大切な人の笑顔を咲かせる「特別な一輪」で、あなたの想いを届けませんか？</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:#000;color:#f0f0f0;line-height:1.9;font-weight:300;padding-top:48px;padding-bottom:72px}
+.urgent-bar{position:fixed;top:0;left:0;right:0;z-index:9999;background:#ff0000;color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:700;letter-spacing:.05em;animation:pulse 2.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.82}}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+.red{color:#ff0000}.yellow{color:#ffff00}
+.hero{text-align:center;padding:80px 20px 100px;border-bottom:3px solid #ff0000;background:linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.72)),url(https://picsum.photos/seed/professional/1200/800) center/cover no-repeat}
+.hero-tag{display:inline-block;background:#ff0000;color:#fff;font-size:11px;font-weight:700;letter-spacing:.2em;padding:4px 14px;margin-bottom:20px}
+.hero h1{font-size:clamp(22px,4.5vw,50px);font-weight:900;line-height:1.3;color:#fff;margin-bottom:16px}
+.hero-sub{font-size:clamp(13px,2vw,16px);color:#bbb;margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto}
+.btn-sales{display:inline-block;padding:20px 56px;background:#ff0000;color:#fff;font-size:clamp(15px,2.5vw,20px);font-weight:900;border-radius:4px;letter-spacing:.05em;transition:all .3s;border:none;cursor:pointer;text-decoration:none}
+.btn-sales:hover{transform:scale(1.03)}
+.btn-wrapper{text-align:center;margin:48px 0}
+.problem-section{background:#0a0000}
+.problem-section h2{color:#fff;font-size:clamp(18px,3vw,32px);font-weight:900;margin-bottom:32px}
+.problem-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.problem-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:#ddd;padding:16px;background:#110000;border-left:3px solid #ff0000;border-radius:0 4px 4px 0}
+.x-mark{color:#ff0000;font-size:22px;font-weight:900;flex-shrink:0;line-height:1.4}
+.connect{color:#ffff00;font-size:clamp(15px,2.5vw,20px);font-weight:700;text-align:center;margin-top:32px;padding:20px;border:2px dashed #ffff00}
+.cause-section{background:#000;padding:80px 0}
+.cause-box{background:#0d0000;border:2px solid #ff0000;border-radius:8px;padding:40px;text-align:center;max-width:680px;margin:0 auto}
+.cause-box h2{font-size:clamp(18px,3vw,30px);font-weight:900;color:#ff0000;margin-bottom:20px}
+.cause-box p{font-size:clamp(14px,2vw,17px);line-height:2;color:#ddd}
+.highlight{background:#ffff00;color:#000;padding:2px 6px;font-weight:700}
+.evidence-section{background:#050505}
+.evidence-section h2{color:#fff;font-size:clamp(18px,3vw,32px);font-weight:900;margin-bottom:32px}
+.feature-item{display:flex;align-items:flex-start;gap:20px;padding:24px;background:#0a0a0a;border:1px solid #1a1a1a;border-radius:8px;margin-bottom:16px}
+.feature-num{width:40px;height:40px;background:#ff0000;color:#fff;font-size:18px;font-weight:900;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.feature-item h3{font-size:17px;font-weight:700;color:#fff;margin-bottom:6px}
+.feature-item p{font-size:14px;color:#888;line-height:1.9}
+.product-image-wrap{text-align:center;margin-bottom:40px}
+.product-image{max-width:600px;width:100%;border-radius:12px}
+.voice-section{background:#000}
+.voice-section h2{color:#fff;font-size:clamp(18px,3vw,32px);font-weight:900;margin-bottom:32px;text-align:center}
+.voice-item{background:#0a0000;border:1px solid #ff000030;border-radius:8px;padding:28px;margin-bottom:20px}
+.voice-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;margin-bottom:10px;border:2px solid #ff0000}
+.voice-result{display:inline-block;background:#ff0000;color:#fff;font-size:13px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:12px}
+.voice-text{font-size:15px;color:#ddd;line-height:2;margin-bottom:12px;font-style:italic}
+.voice-name{font-size:13px;color:#888}
+.cost-section{background:#050505}
+.cost-section h2{color:#fff;font-size:clamp(18px,3vw,28px);font-weight:900;margin-bottom:24px;text-align:center}
+.cost-box{background:#0a0a0a;border:2px dashed #ffff00;border-radius:8px;padding:36px;max-width:680px;margin:0 auto}
+.cost-box h3{color:#ffff00;font-size:20px;font-weight:900;margin-bottom:16px}
+.cost-box p{font-size:15px;line-height:2;color:#ccc}
+.price-section{background:#000;text-align:center}
+.price-section h2{color:#fff;font-size:clamp(18px,3vw,32px);font-weight:900;margin-bottom:40px}
+.price-inner{max-width:560px;margin:0 auto;background:#0a0000;border:3px solid #ff0000;border-radius:12px;padding:48px 32px}
+.price-normal{color:#666;font-size:18px;text-decoration:line-through;margin-bottom:8px}
+.price-special{font-size:clamp(40px,7vw,80px);font-weight:900;color:#ff0000;line-height:1}
+.price-note{color:#888;font-size:13px;margin-top:12px}
+.faq-section{background:#050505}
+.faq-section h2{color:#fff;font-size:clamp(18px,3vw,28px);font-weight:900;margin-bottom:32px;text-align:center}
+.faq-item{margin-bottom:12px;border:1px solid #1a1a1a;border-radius:6px;overflow:hidden}
+.faq-q{background:#0a0a0a;padding:18px 20px;cursor:pointer;font-size:15px;font-weight:700;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.faq-arrow{color:#ff0000;font-size:20px;transition:transform .3s}
+.faq-item.open .faq-arrow{transform:rotate(45deg)}
+.faq-a{padding:18px 20px;font-size:14px;color:#ccc;background:#050505;line-height:2}
+.closing-section{background:#0a0000;text-align:center;padding:100px 20px}
+.closing-section h2{font-size:clamp(20px,3.5vw,38px);font-weight:900;color:#fff;margin-bottom:20px;line-height:1.4}
+.closing-section p{font-size:15px;color:#bbb;margin-bottom:40px;max-width:560px;margin-left:auto;margin-right:auto}
+.ps-section{background:#000;border-top:1px solid #1a1a1a;padding:60px 0}
+.ps-box{max-width:680px;margin:0 auto;padding:32px;background:#050505;border-left:4px solid #ffff00;border-radius:0 8px 8px 0}
+.ps-box p{font-size:14px;color:#bbb;line-height:2}
+.ps-label{color:#ffff00;font-size:13px;font-weight:700;letter-spacing:.1em;margin-bottom:10px}
+footer{background:#000;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center;font-size:11px;color:#444;letter-spacing:.05em}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:998;background:#ff0000;display:flex;align-items:center;justify-content:center;padding:14px 24px;box-shadow:0 -4px 20px rgba(255,0,0,0.4);transform:translateY(100%);transition:transform .4s ease}
+.sticky-cta.visible{transform:translateY(0)}
+.sticky-cta-btn{padding:10px 32px;background:#fff;color:#ff0000;font-size:14px;font-weight:900;border-radius:4px;letter-spacing:.05em;border:none;cursor:pointer}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.fade-in.visible{opacity:1;transform:none}
+@media(max-width:640px){section{padding:60px 0}.hero{padding:60px 16px 80px}.cause-box,.price-inner{padding:28px 16px}}
+:root{--accent:#ec4899;--accent2:#f472b6;--bg1:#fdf2f8;--bg2:#fce7f3;--bg3:#ffffff;--accent-text:#ffffff;--border:#fbcfe8;--text:#831843;--text-muted:#9ca3af}
+.urgent-bar,.btn-sales,.voice-result,.hero-tag,.price-special-bg{background:var(--accent);color:var(--accent-text)}
+.btn-sales:hover{filter:brightness(1.15)}
+.price-special,.x-mark,.red{color:var(--accent)}
+body{background:var(--bg1)}
+</style>
+</head>
+<body>
+
+<div class="urgent-bar">⚠ 残りわずか — お申し込みが殺到しています。定員になり次第、受付を終了します</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-tag">SPECIAL OFFER</div>
+    <h1>【累計10,000名が感動】大切な人の笑顔を咲かせる「特別な一輪」で、あなたの想いを届けませんか？</h1>
+    <p class="hero-sub">プレゼント満足度98.7%。記念日・感謝・お祝い…言葉にできない気持ちを、お花が届けます</p>
+    <div class="btn-wrapper"><a href="#" class="btn-sales">【今月限定】無料相談で500円OFFクーポンプレゼント →</a></div>
+  </div>
+</section>
+
+<section class="problem-section">
+  <div class="wrap">
+    <h2>もしひとつでも当てはまるなら<br>最後まで読んでください</h2>
+    <ul class="problem-list"><li><span class="x-mark">✗</span>大切な人に感謝を伝えたいけど、言葉だけでは照れくさい…</li><li><span class="x-mark">✗</span>プレゼント選びに毎回悩んで、結局無難なものを選んでしまう</li><li><span class="x-mark">✗</span>記念日や誕生日、何を贈れば本当に喜んでもらえるかわからない</li><li><span class="x-mark">✗</span>ネットで花を注文しても、届いたときに萎れていないか不安</li><li><span class="x-mark">✗</span>相手の好みがわからず、花束のイメージが湧かない</li><li><span class="x-mark">✗</span>特別感のあるギフトを贈りたいのに、どこに頼めばいいかわからない</li></ul>
+    <div class="connect">あなたが結果を出せないのは才能のせいではありません。<br><span class="red">「正しい方法」と「正しいサポート」</span>がなかっただけです。</div>
+  </div>
+</section>
+
+<section class="cause-section">
+  <div class="wrap">
+    <div class="cause-box">
+      <h2>あなたのせいでは<br>ありません</h2>
+      <p>何度挑戦しても結果が出なかったとしたら、それは<span class="highlight">方法が間違っていた</span>だけです。<br><br>私たちのフラワーギフトは、お客様の「想い」をヒアリングし、プロのフローリストが一輪一輪心を込めてお作りします。鮮度保証・全国配送・メッセージカード無料で、届いた瞬間の感動をお約束します。</p>
+    </div>
+  </div>
+</section>
+
+<section class="evidence-section">
+  <div class="wrap">
+    <h2>なぜ<span class="red">これだけ</span>結果が出るのか</h2>
+    
+    
+    <div class="feature-item fade-in">
+      <div class="feature-num">1</div>
+      <div><h3>想いを形にするヒアリング</h3><p>贈る相手・シーン・ご予算をお伺いし、世界にひとつだけの花束をご提案。初めての方も安心です</p></div>
+    </div>
+    <div class="feature-item fade-in">
+      <div class="feature-num">2</div>
+      <div><h3>産地直送・鮮度保証</h3><p>市場から届いたばかりの新鮮な花を使用。届いた瞬間の美しさを72時間保証します</p></div>
+    </div>
+    <div class="feature-item fade-in">
+      <div class="feature-num">3</div>
+      <div><h3>全国翌日配送対応</h3><p>北海道から沖縄まで全国配送OK。最短翌日届けで急なご依頼にも対応します</p></div>
+    </div>
+    <div class="feature-item fade-in">
+      <div class="feature-num">4</div>
+      <div><h3>無料メッセージカード付き</h3><p>あなたの言葉を添えて届けます。筆文字・英字など選べるデザインで特別感をプラス</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="voice-section">
+  <div class="wrap">
+    <h2>受講者の<span class="red">リアルな声</span></h2>
+    
+    <div class="voice-item fade-in">
+      
+      <div class="voice-result">母との関係がさらに深まりました</div>
+      <p class="voice-text">「母の還暦祝いに贈りました。届いた瞬間、母が涙を流して喜んでくれて…私も思わずもらい泣き。こんなに喜んでもらえたのは初めてです」</p>
+      <p class="voice-name">田中様（30代女性・会社員）</p>
+    </div>
+    <div class="voice-item fade-in">
+      
+      <div class="voice-result">妻から「今までで一番嬉しい」と言われました</div>
+      <p class="voice-text">「妻への結婚記念日に注文。普段花を贈る習慣がなかったのですが、妻の笑顔を見て『もっと早く贈ればよかった』と思いました」</p>
+      <p class="voice-name">佐藤様（40代男性・経営者）</p>
+    </div>
+    <div class="voice-item fade-in">
+      
+      <div class="voice-result">祖母から『生きててよかった』と電話がありました</div>
+      <p class="voice-text">「遠方に住む祖母の誕生日に配送をお願いしました。写真付きで届いた報告をもらい、祖母の笑顔に会えなくても繋がれた気がしました」</p>
+      <p class="voice-name">山田様（20代女性・学生）</p>
+    </div>
+  </div>
+</section>
+
+<section class="cost-section">
+  <div class="wrap">
+    <h2>「何もしない」ことのコストを<br>考えたことはありますか？</h2>
+    <div class="cost-box">
+      <h3>今のまま過ごす5年間のコスト</h3>
+      <p>「またいつか」「もう少し準備してから」——この思考パターンが、1年後も5年後も同じ場所にいる原因です。<br><br>時間はお金で買えませんが、お金は時間で取り戻せます。<span class="yellow">戦略なき努力はただの消耗。</span>今すぐ正しい投資をした人だけが、人生を変えられます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="price-section">
+  <div class="wrap">
+    <h2>ご案内価格</h2>
+    <div class="price-inner">
+      <p class="price-normal">通常価格 ¥500,000</p>
+      <p class="price-special">50,000円〜（税込・送料無料）</p>
+      <p class="price-note">※分割払い対応可 / 今すぐお申し込みで特典付き</p>
+      <div class="btn-wrapper" style="margin:32px 0 0"><a href="#" class="btn-sales">【今月限定】無料相談で500円OFFクーポンプレゼント →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="wrap">
+    <h2>よくある質問</h2>
+    
+    <div class="faq-item" id="sfaq-0">
+      <div class="faq-q" onclick="toggleFaq(0,'sfaq-')">
+        花のことが全くわからないのですが大丈夫ですか？<span class="faq-arrow">＋</span>
+      </div>
+      <div class="faq-a" id="sfaq-a-0" style="display:none">
+        <p>もちろんです！「相手の年代」「贈るシーン」「ご予算」の3点をお伝えいただければ、プロが最適なご提案をいたします</p>
+      </div>
+    </div>
+    <div class="faq-item" id="sfaq-1">
+      <div class="faq-q" onclick="toggleFaq(1,'sfaq-')">
+        届いたときに花が傷んでいないか心配です<span class="faq-arrow">＋</span>
+      </div>
+      <div class="faq-a" id="sfaq-a-1" style="display:none">
+        <p>産地直送の新鮮な花を使用し、72時間の鮮度保証付き。万が一の場合は無料で再送いたします</p>
+      </div>
+    </div>
+    <div class="faq-item" id="sfaq-2">
+      <div class="faq-q" onclick="toggleFaq(2,'sfaq-')">
+        急ぎで必要なのですが間に合いますか？<span class="faq-arrow">＋</span>
+      </div>
+      <div class="faq-a" id="sfaq-a-2" style="display:none">
+        <p>最短翌日配送に対応しています。お急ぎの場合は、まずLINEかお電話でご相談ください</p>
+      </div>
+    </div>
+    <div class="faq-item" id="sfaq-3">
+      <div class="faq-q" onclick="toggleFaq(3,'sfaq-')">
+        50,000円以上の予算でどんな花束が届きますか？<span class="faq-arrow">＋</span>
+      </div>
+      <div class="faq-a" id="sfaq-a-3" style="display:none">
+        <p>季節の最高級花材を贅沢に使用した、記念日にふさわしい豪華なアレンジメントをお作りします。法人ギフトや特別なプロポーズにも最適です</p>
+      </div>
+    </div>
+    <div class="faq-item" id="sfaq-4">
+      <div class="faq-q" onclick="toggleFaq(4,'sfaq-')">
+        相手の住所しかわからないのですが注文できますか？<span class="faq-arrow">＋</span>
+      </div>
+      <div class="faq-a" id="sfaq-a-4" style="display:none">
+        <p>はい、お届け先のご住所・お名前・ご希望日時がわかればご注文いただけます。サプライズ配送も多くご依頼いただいています</p>
+      </div>
+    </div>
+    <div class="faq-item" id="sfaq-5">
+      <div class="faq-q" onclick="toggleFaq(5,'sfaq-')">
+        キャンセルや変更はできますか？<span class="faq-arrow">＋</span>
+      </div>
+      <div class="faq-a" id="sfaq-a-5" style="display:none">
+        <p>制作開始前であれば無料で変更・キャンセル可能です。制作開始後は花材の関係上、ご対応が難しい場合がございます</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing-section">
+  <div class="wrap">
+    <h2>今まで頑張ってきたあなたの努力は<br><span class="red">絶対に無駄ではない</span></h2>
+    <p>あとは正しい場所でやり直すだけです。迷うということは、やりたい証拠。本当に興味がないなら、とっくにこのページを閉じているはずです。</p>
+    <a href="#" class="btn-sales">【今月限定】無料相談で500円OFFクーポンプレゼント →</a>
+  </div>
+</section>
+
+<section class="ps-section">
+  <div class="wrap">
+    <div class="ps-box"><p class="ps-label">P.S.</p><p>明日以降、このページからお申し込みできなくなる可能性があります。「あの時やっておけばよかった」という後悔だけはしてほしくないので、今すぐ決断してください。</p></div>
+    <div class="ps-box" style="margin-top:16px"><p class="ps-label">P.P.S.</p><p>まずは無料相談だけでも構いません。話を聞いた上で決めてください。</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>Copyright &copy; 2026 Flower Gift HANASAKI</p>
+  <p style="margin-top:8px"><a href="#" style="color:#444">プライバシーポリシー</a> | <a href="#" style="color:#444">特定商取引法に基づく表記</a></p>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="#" class="sticky-cta-btn">【今月限定】無料相談で500円OFFクーポンプレゼント →</a>
+</div>
+
+<script>
+var stickyCta = document.getElementById('stickyCta')
+window.addEventListener('scroll', function(){
+  if(window.scrollY > window.innerHeight * 0.5) stickyCta.classList.add('visible')
+  else stickyCta.classList.remove('visible')
+}, { passive: true })
+var observer = new IntersectionObserver(function(e){ e.forEach(function(x){ if(x.isIntersecting) x.target.classList.add('visible') }) }, { threshold: 0.1 })
+document.querySelectorAll('.fade-in').forEach(function(el){ observer.observe(el) })
+function toggleFaq(i, prefix){
+  prefix = prefix || 'sfaq-'
+  var item = document.getElementById(prefix+i)
+  var ans  = document.getElementById(prefix+'a-'+i)
+  var isOpen = item.classList.contains('open')
+  document.querySelectorAll('.faq-item.open').forEach(function(it){ it.classList.remove('open'); var a = it.querySelector('.faq-a'); if(a) a.style.display='none' })
+  if(!isOpen){ item.classList.add('open'); if(ans) ans.style.display='block' }
+}
+</script>
+</body>
+</html>

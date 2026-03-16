@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>毎日の幸せを一杯から｜コーヒーカフェ｜オープン記念300名来場突破</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; color: #333; overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; }
+
+:root {
+  --primary:   #6b3a2a;
+  --secondary: #a0522d;
+  --accent:    #e74c3c;
+  --bg-light:  #fff8f5;
+}
+
+/* ===== ナビ ===== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 14px 5%;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: all 0.3s ease; background: transparent;
+}
+.nav.scrolled { background: rgba(255,255,255,0.96); box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
+.nav-logo { font-size: 1.2rem; font-weight: 900; color: #fff; }
+.nav.scrolled .nav-logo { color: var(--primary); }
+.nav-links { display: flex; gap: 18px; list-style: none; }
+.nav-links a { color: #fff; font-weight: 500; font-size: 0.88rem; }
+.nav.scrolled .nav-links a { color: #333; }
+.nav-cta {
+  background: var(--accent) !important; color: #fff !important;
+  padding: 7px 18px; border-radius: 20px; font-weight: 700 !important;
+}
+@media(max-width:768px){ .nav-links { display: none; } }
+
+/* ===== ヒーロー ===== */
+.hero {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.42)), url('https://picsum.photos/seed/coffeecafehero/1920/1080');
+  background-size: cover; background-position: center;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: 100px 5% 60px; position: relative;
+}
+.hero-badge {
+  display: inline-block; background: var(--accent); color: #fff;
+  padding: 6px 20px; border-radius: 25px;
+  font-size: 0.85rem; font-weight: 700; margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.04)} }
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  color: #fff; font-weight: 900; line-height: 1.35; margin-bottom: 20px;
+}
+.hero-sub { color: rgba(255,255,255,0.92); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.7; }
+.hero-cta {
+  display: inline-block; background: var(--accent); color: #fff;
+  padding: 18px 52px; border-radius: 50px;
+  font-size: 1.1rem; font-weight: 900;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  transition: all 0.3s; letter-spacing: 0.05em;
+}
+.hero-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+.hero-scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); animation: bounce 1.5s infinite; }
+.hero-scroll span { display: block; width: 18px; height: 18px; border-right: 3px solid #fff; border-bottom: 3px solid #fff; transform: rotate(45deg); }
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(9px)} }
+
+/* ===== スタッツ ===== */
+.stats {
+  background: var(--primary); padding: 55px 5%;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 36px; text-align: center;
+}
+.stat-item { color: #fff; }
+.stat-number { font-size: 2.8rem; font-weight: 900; display: inline; }
+.stat-unit { font-size: 1.4rem; font-weight: 700; }
+.stat-label { font-size: 0.88rem; opacity: 0.85; margin-top: 5px; }
+
+/* ===== セクション共通 ===== */
+section { padding: 80px 5%; }
+.section-tag {
+  display: inline-block; color: var(--primary);
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+.section-title { font-size: clamp(1.4rem, 3vw, 2.1rem); font-weight: 900; line-height: 1.35; margin-bottom: 14px; }
+.section-sub { color: #666; margin-bottom: 48px; line-height: 1.7; }
+.section-center { text-align: center; }
+
+/* ===== 問題提起 ===== */
+.problems { background: var(--bg-light); }
+.problem-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px; max-width: 900px; margin: 0 auto;
+}
+.problem-card {
+  background: #fff; border-radius: 12px; padding: 22px 20px;
+  border-left: 4px solid #e74c3c;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+.problem-card p { color: #555; line-height: 1.7; }
+.problem-card p::before { content: "\274C  "; }
+.section-img-wrap {
+  margin-top: 40px; border-radius: 16px; overflow: hidden; max-height: 300px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+.section-img-wrap img { width: 100%; height: 300px; object-fit: cover; }
+
+/* ===== 強みカード ===== */
+.strengths-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px; max-width: 1000px; margin: 0 auto;
+}
+.strength-card {
+  background: #fff; border-radius: 16px; padding: 32px 22px;
+  text-align: center; box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+  transition: transform 0.3s;
+}
+.strength-card:hover { transform: translateY(-5px); }
+.strength-icon { font-size: 2.4rem; margin-bottom: 14px; }
+.strength-num { font-size: 2.4rem; font-weight: 900; color: var(--primary); margin-bottom: 10px; }
+.strength-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+.strength-card p { color: #666; font-size: 0.88rem; line-height: 1.7; }
+
+/* ===== お客様の声 ===== */
+.testimonials { background: var(--bg-light); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 22px; }
+.testimonial-card {
+  background: #fff; border-radius: 16px; padding: 28px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.07);
+}
+.testimonial-stars { color: #f39c12; font-size: 1.15rem; margin-bottom: 10px; }
+.testimonial-card blockquote { color: #555; line-height: 1.8; margin-bottom: 14px; font-size: 0.93rem; }
+.testimonial-card blockquote::before { content: "\300C"; font-size: 1.3rem; color: var(--primary); }
+.testimonial-card blockquote::after  { content: "\300D"; font-size: 1.3rem; color: var(--primary); }
+.testimonial-author { font-weight: 700; color: #333; font-size: 0.88rem; }
+
+/* ===== ギャラリー ===== */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.gallery-grid img { width: 100%; height: 210px; object-fit: cover; border-radius: 10px; transition: transform 0.3s; }
+.gallery-grid img:hover { transform: scale(1.03); }
+@media(max-width:600px){ .gallery-grid { grid-template-columns: 1fr 1fr; } }
+
+/* ===== 流れ ===== */
+.flow-steps {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 18px; max-width: 1000px; margin: 0 auto;
+}
+.flow-step { text-align: center; }
+.flow-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--primary); color: #fff;
+  font-size: 1.4rem; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+.flow-step h3 { font-weight: 700; margin-bottom: 7px; }
+.flow-step p { color: #666; font-size: 0.88rem; line-height: 1.6; }
+
+/* ===== FAQ ===== */
+.faq-list { max-width: 750px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid #eee; overflow: hidden; }
+.faq-question {
+  width: 100%; text-align: left; padding: 18px 0;
+  background: none; border: none; cursor: pointer;
+  font-size: 0.97rem; font-weight: 700; color: #333;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.faq-question::before { content: "Q. "; color: var(--primary); margin-right: 8px; flex-shrink: 0; }
+.faq-icon { font-size: 1.3rem; color: var(--primary); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-answer p { padding: 0 0 18px 0; color: #555; line-height: 1.75; }
+
+/* ===== プロフィール ===== */
+.profile { background: var(--bg-light); }
+.profile-inner {
+  max-width: 880px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center;
+}
+.profile-image img { width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 1; }
+.profile-name { font-size: 1.5rem; font-weight: 900; margin-bottom: 5px; }
+.profile-title-text { color: var(--primary); font-weight: 700; margin-bottom: 20px; }
+.profile-bio { color: #555; line-height: 1.9; }
+@media(max-width:600px){ .profile-inner { grid-template-columns: 1fr; } }
+
+/* ===== 最終CTA ===== */
+.final-cta {
+  background-image: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)), url('https://picsum.photos/seed/coffeecafebg/1200/800');
+  background-size: cover; background-position: center;
+  padding: 100px 5%; text-align: center; color: #fff;
+}
+.final-cta h2 { font-size: clamp(1.4rem, 3vw, 2.4rem); font-weight: 900; margin-bottom: 18px; }
+.final-cta p { font-size: 1.05rem; opacity: 0.92; margin-bottom: 38px; line-height: 1.7; }
+.final-cta-btn {
+  display: inline-block; background: var(--accent);
+  color: #fff; padding: 20px 60px;
+  border-radius: 50px; font-size: 1.15rem; font-weight: 900;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  transition: all 0.3s;
+}
+.final-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+.final-cta-sub { margin-top: 18px; font-size: 0.88rem; opacity: 0.8; }
+
+/* ===== フッター ===== */
+footer { background: #1a1a2e; color: #aaa; padding: 48px 5%; text-align: center; }
+.footer-logo { font-size: 1.2rem; font-weight: 900; color: #fff; margin-bottom: 18px; }
+.footer-links { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 18px; }
+.footer-links a { color: #aaa; font-size: 0.88rem; }
+.footer-links a:hover { color: #fff; }
+.footer-copy { font-size: 0.82rem; }
+
+/* ===== 固定CTAバー ===== */
+.fixed-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+  background: var(--primary); padding: 11px 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+}
+.fixed-cta-text { color: #fff; font-weight: 700; font-size: 0.92rem; }
+.fixed-cta-btn {
+  background: var(--accent); color: #fff;
+  padding: 11px 28px; border-radius: 28px;
+  font-weight: 900; font-size: 0.92rem; white-space: nowrap;
+}
+@media(max-width:480px){
+  .fixed-cta-text { font-size: 0.78rem; }
+  .fixed-cta-btn { padding: 9px 18px; font-size: 0.82rem; }
+}
+
+/* ===== フェードイン ===== */
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-logo">コーヒーカフェ</div>
+  <ul class="nav-links">
+    <li><a href="#strengths">強み</a></li>
+    <li><a href="#testimonials">お客様の声</a></li>
+    <li><a href="#flow">流れ</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#cta" class="nav-cta">今すぐ来店予約する</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="hero-badge">オープン記念300名来場突破・リピート率89%</span>
+    <h1>オープンわずか1ヶ月で300名が来場した話題のカフェで、あなたも至福の一杯に出会いませんか？</h1>
+    <p class="hero-sub">忙しい毎日に、ほっと一息つける特別な空間をお届けします</p>
+    <a href="#" class="hero-cta">今すぐ来店予約する</a>
+  </div>
+  <div class="hero-scroll"><span></span></div>
+</section>
+
+<div class="stats fade-in">
+      <div class="stat-item">
+        <span class="stat-number" data-target="300">0</span><span class="stat-unit">名</span>
+        <p class="stat-label">オープン来場者数</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="89">0</span><span class="stat-unit">%</span>
+        <p class="stat-label">リピート率</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="1200">0</span><span class="stat-unit">円〜</span>
+        <p class="stat-label">お手頃価格</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="4.8">0</span><span class="stat-unit">点</span>
+        <p class="stat-label">口コミ評価</p>
+      </div></div>
+
+
+<section class="problems fade-in">
+  <div class="section-center">
+    <span class="section-tag">PROBLEM</span>
+    <h2 class="section-title">こんなお悩みを抱えていませんか？</h2>
+  </div>
+  <div class="problem-grid">
+    <div class="problem-card"><p>毎日が忙しすぎて、心からリラックスできる時間がない</p></div>
+      <div class="problem-card"><p>コンビニコーヒーでは物足りないけど、高級店は敷居が高い</p></div>
+      <div class="problem-card"><p>一人でも気軽に入れる居心地の良いカフェが見つからない</p></div>
+      <div class="problem-card"><p>美味しいコーヒーを飲みながら、ほっと一息つきたいのに場所がない</p></div>
+      <div class="problem-card"><p>テレワークや勉強に集中できる落ち着いた空間を探している</p></div>
+      <div class="problem-card"><p>友人や大切な人とゆっくり過ごせる特別な場所が欲しい</p></div>
+  </div>
+  <div class="section-img-wrap" style="max-width:900px;margin:40px auto 0;">
+    <img src="https://picsum.photos/seed/coffeecafebg/1200/800" alt="コーヒーカフェ" style="width:100%;height:300px;object-fit:cover;">
+  </div>
+</section>
+
+
+<section id="strengths" class="fade-in">
+  <div class="section-center">
+    <span class="section-tag">WHY CHOOSE US</span>
+    <h2 class="section-title">選ばれる理由</h2>
+    <p class="section-sub">私たちが選ばれる4つの理由をご紹介します</p>
+  </div>
+  <div class="strengths-grid">
+    
+      <div class="strength-card fade-in">
+        <div class="strength-icon">☕</div>
+        <div class="strength-num">01</div>
+        <h3>厳選豆の本格派</h3>
+        <p>世界各地から厳選したスペシャルティコーヒー豆を自家焙煎。毎日届く新鮮な香りと深い味わいで、本物のコーヒー体験をお届けします。</p>
+      </div>
+      <div class="strength-card fade-in">
+        <div class="strength-icon">🏠</div>
+        <div class="strength-num">02</div>
+        <h3>居心地抜群の空間</h3>
+        <p>木のぬくもりを感じるナチュラルな内装と、ゆったりとした座席配置。一人でも友人とでも、思い思いの時間を過ごせる癒しの空間です。</p>
+      </div>
+      <div class="strength-card fade-in">
+        <div class="strength-icon">💰</div>
+        <div class="strength-num">03</div>
+        <h3>毎日通える価格設定</h3>
+        <p>1200円からのお手頃価格で、本格的なスペシャルティコーヒーを毎日お楽しみいただけます。日常に特別を、無理なく取り入れられます。</p>
+      </div>
+      <div class="strength-card fade-in">
+        <div class="strength-icon">🎂</div>
+        <div class="strength-num">04</div>
+        <h3>手作りスイーツ</h3>
+        <p>パティシエが毎朝手作りするケーキやスコーンは、コーヒーとの相性を考え抜いた逸品。至福のペアリング体験をお約束します。</p>
+      </div>
+  </div>
+</section>
+
+
+<section id="testimonials" class="testimonials fade-in">
+  <div class="section-center">
+    <span class="section-tag">CUSTOMER VOICE</span>
+    <h2 class="section-title">お客様の声</h2>
+    <p class="section-sub">実際にご利用いただいた方のリアルな声です</p>
+  </div>
+  <div class="testimonials-grid">
+    
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>毎日の通勤前に立ち寄るのが日課になりました。ここのラテを飲むと、どんなに忙しい朝でも幸せな気持ちで一日をスタートできます。オープンから通い続けて、もう30回以上来ています！</blockquote>
+        <p class="testimonial-author">30代・会社員女性</p>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>テレワーク中の気分転換に週3で利用しています。Wi-Fi完備で電源もあり、コーヒーも美味しい。仕事の効率が1.5倍になった気がします。静かで集中できる最高の環境です。</blockquote>
+        <p class="testimonial-author">40代・フリーランス男性</p>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>妻との結婚記念日に初めて訪れて以来、月に2回は二人で来ています。落ち着いた雰囲気の中で飲むコーヒーは格別で、夫婦の会話も自然と弾みます。私たちの特別な場所になりました。</blockquote>
+        <p class="testimonial-author">50代・夫婦</p>
+      </div>
+  </div>
+</section>
+
+<section class="fade-in">
+  <div class="section-center" style="margin-bottom:28px">
+    <span class="section-tag">GALLERY</span>
+    <h2 class="section-title">店内の様子・こだわりのメニュー</h2>
+  </div>
+  <div class="gallery-grid" style="max-width:1100px;margin:0 auto;">
+    <img src="https://picsum.photos/seed/coffeecafe1/800/600" data-placeholder="GALLERY_IMAGE_1_PLACEHOLDER" alt="コーヒーカフェ" loading="lazy">
+      <img src="https://picsum.photos/seed/coffeecafe2/800/600" data-placeholder="GALLERY_IMAGE_2_PLACEHOLDER" alt="コーヒーカフェ" loading="lazy">
+      <img src="https://picsum.photos/seed/coffeecafe3/800/600" data-placeholder="GALLERY_IMAGE_3_PLACEHOLDER" alt="コーヒーカフェ" loading="lazy">
+  </div>
+</section>
+
+
+<section id="flow" class="fade-in" style="background:var(--bg-light)">
+  <div class="section-center">
+    <span class="section-tag">HOW IT WORKS</span>
+    <h2 class="section-title">ご利用の流れ</h2>
+    <p class="section-sub">ご来店からお帰りまで、心地よい体験をお約束します</p>
+  </div>
+  <div class="flow-steps">
+    
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <h3>ご予約</h3>
+        <p>Webまたはお電話で簡単予約。もちろん予約なしでもOKです</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <h3>ご来店</h3>
+        <p>温かいスタッフがお出迎え。お好きな席へご案内します</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <h3>ご注文</h3>
+        <p>豊富なメニューから、その日の気分に合った一杯をお選びください</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <h3>至福の時間</h3>
+        <p>こだわりの一杯と共に、ゆったりとした時間をお過ごしください</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">5</div>
+        <h3>また会う日まで</h3>
+        <p>次回使えるスタンプカードをお渡し。ぜひまたお越しください</p>
+      </div>
+  </div>
+</section>
+
+
+<section id="faq" class="fade-in">
+  <div class="section-center">
+    <span class="section-tag">FAQ</span>
+    <h2 class="section-title">よくある質問</h2>
+  </div>
+  <div class="faq-list">
+    
+      <div class="faq-item">
+        <button class="faq-question">一人でも入りやすいですか？<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>はい、お一人様のお客様も多くいらっしゃいます。カウンター席もご用意しており、読書やお仕事にも最適な環境です。スタッフも温かくお迎えしますのでご安心ください。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Wi-Fiや電源はありますか？<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>はい、無料Wi-Fi完備で、全席に電源コンセントをご用意しています。テレワークや勉強にもゆっくりお使いいただけます。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">予約は必要ですか？<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>予約なしでもご来店いただけますが、週末や混雑時は予約優先となります。確実に席を確保されたい場合は、Webからの事前予約をおすすめします。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">コーヒーが苦手でも楽しめますか？<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>もちろんです。紅茶、ハーブティー、フレッシュジュース、カフェインレスコーヒーなど、コーヒー以外のドリンクも豊富にご用意しています。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">子連れでも大丈夫ですか？<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>はい、お子様連れも大歓迎です。キッズメニューやお子様用の椅子もご用意しています。ご家族でのご来店をお待ちしております。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">駐車場はありますか？<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>店舗前に5台分の専用駐車場をご用意しています。満車の場合は近隣のコインパーキングをご利用ください（100円割引券をお渡しします）。</p></div>
+      </div>
+  </div>
+</section>
+
+
+<section class="profile fade-in">
+  <div class="profile-inner">
+    <div class="profile-image">
+      <img src="https://picsum.photos/seed/coffeecafeperson/400/400" data-placeholder="PROFILE_IMAGE_PLACEHOLDER" alt="オーナーバリスタ 田中 誠一" style="width:100%;border-radius:16px;object-fit:cover;aspect-ratio:1;">
+    </div>
+    <div class="profile-text-block">
+      <span class="section-tag">ABOUT</span>
+      <h2 class="profile-name">オーナーバリスタ 田中 誠一</h2>
+      <p class="profile-title-text">SCAJコーヒーマイスター・焙煎士</p>
+      <p class="profile-bio">大手コーヒーチェーンで10年間バリスタとして勤務後、本場イタリア・シアトルで2年間修行。帰国後、コーヒー豆の買い付けから焙煎、抽出まで一貫してこだわる夢のカフェをオープン。「一杯のコーヒーで、すべての人に小さな幸せを届けたい」という想いで、毎日心を込めてコーヒーを淹れています。オープンわずか1ヶ月で300名以上にご来場いただき、地域の皆様に愛されるカフェを目指して日々精進しています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" id="cta">
+  <h2>あなたの「幸せな一杯」が、ここで待っています</h2>
+  <p>忙しい毎日を頑張るあなたに、心からリラックスできる特別な時間をお届けします</p>
+  <a href="#" class="final-cta-btn">今すぐ来店予約する</a>
+  <p class="final-cta-sub">今月ご来店の方限定｜ドリンク1杯無料クーポンプレゼント中</p>
+</section>
+
+<footer>
+  <div class="footer-logo">コーヒーカフェ</div>
+  <div class="footer-links">
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">特定商取引法に基づく表記</a>
+    <a href="#">お問い合わせ</a>
+  </div>
+  <p class="footer-copy">Copyright &copy; 2026 コーヒーカフェ All Rights Reserved.</p>
+</footer>
+
+<div class="fixed-cta">
+  <span class="fixed-cta-text">初回限定ドリンク無料｜今すぐ予約</span>
+  <a href="#cta" class="fixed-cta-btn">今すぐ来店予約する</a>
+</div>
+
+<script>
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('nav');
+  if (window.scrollY > 50) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+var fadeObs = new IntersectionObserver(function(es) {
+  es.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(function(el) { fadeObs.observe(el); });
+
+function countUp(el) {
+  var target = parseFloat(el.dataset.target);
+  var start = 0, step = target / 60;
+  var t = setInterval(function() {
+    start += step;
+    if (start >= target) { start = target; clearInterval(t); }
+    el.textContent = (target % 1 !== 0) ? start.toFixed(1) : Math.floor(start).toLocaleString();
+  }, 30);
+}
+var cntObs = new IntersectionObserver(function(es) {
+  es.forEach(function(e) {
+    if (e.isIntersecting) { e.target.querySelectorAll('[data-target]').forEach(countUp); cntObs.unobserve(e.target); }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stats').forEach(function(el) { cntObs.observe(el); });
+
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = btn.closest('.faq-item');
+    var ans = item.querySelector('.faq-answer');
+    if (item.classList.contains('open')) {
+      item.classList.remove('open'); ans.style.maxHeight = '0';
+    } else {
+      document.querySelectorAll('.faq-item.open').forEach(function(i) {
+        i.classList.remove('open'); i.querySelector('.faq-answer').style.maxHeight = '0';
+      });
+      item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px';
+    }
+  });
+});
+</script>
+</body>
+</html>

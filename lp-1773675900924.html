@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>毎日頑張る主婦のための癒しのエステサロン｜初回0円体験実施中</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; color: #333; overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; }
+
+:root {
+  --primary:   #b5416a;
+  --secondary: #e91e8c;
+  --accent:    #ffd700;
+  --bg-light:  #fff5f8;
+}
+
+/* ===== ナビ ===== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 14px 5%;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: all 0.3s ease; background: transparent;
+}
+.nav.scrolled { background: rgba(255,255,255,0.96); box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
+.nav-logo { font-size: 1.2rem; font-weight: 900; color: #fff; }
+.nav.scrolled .nav-logo { color: var(--primary); }
+.nav-links { display: flex; gap: 18px; list-style: none; }
+.nav-links a { color: #fff; font-weight: 500; font-size: 0.88rem; }
+.nav.scrolled .nav-links a { color: #333; }
+.nav-cta {
+  background: var(--accent) !important; color: #fff !important;
+  padding: 7px 18px; border-radius: 20px; font-weight: 700 !important;
+}
+@media(max-width:768px){ .nav-links { display: none; } }
+
+/* ===== ヒーロー ===== */
+.hero {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.42)), url('https://picsum.photos/seed/beautysalonhero/1920/1080');
+  background-size: cover; background-position: center;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: 100px 5% 60px; position: relative;
+}
+.hero-badge {
+  display: inline-block; background: var(--accent); color: #fff;
+  padding: 6px 20px; border-radius: 25px;
+  font-size: 0.85rem; font-weight: 700; margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.04)} }
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  color: #fff; font-weight: 900; line-height: 1.35; margin-bottom: 20px;
+}
+.hero-sub { color: rgba(255,255,255,0.92); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.7; }
+.hero-cta {
+  display: inline-block; background: var(--accent); color: #fff;
+  padding: 18px 52px; border-radius: 50px;
+  font-size: 1.1rem; font-weight: 900;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  transition: all 0.3s; letter-spacing: 0.05em;
+}
+.hero-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+.hero-scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); animation: bounce 1.5s infinite; }
+.hero-scroll span { display: block; width: 18px; height: 18px; border-right: 3px solid #fff; border-bottom: 3px solid #fff; transform: rotate(45deg); }
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(9px)} }
+
+/* ===== スタッツ ===== */
+.stats {
+  background: var(--primary); padding: 55px 5%;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 36px; text-align: center;
+}
+.stat-item { color: #fff; }
+.stat-number { font-size: 2.8rem; font-weight: 900; display: inline; }
+.stat-unit { font-size: 1.4rem; font-weight: 700; }
+.stat-label { font-size: 0.88rem; opacity: 0.85; margin-top: 5px; }
+
+/* ===== セクション共通 ===== */
+section { padding: 80px 5%; }
+.section-tag {
+  display: inline-block; color: var(--primary);
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+.section-title { font-size: clamp(1.4rem, 3vw, 2.1rem); font-weight: 900; line-height: 1.35; margin-bottom: 14px; }
+.section-sub { color: #666; margin-bottom: 48px; line-height: 1.7; }
+.section-center { text-align: center; }
+
+/* ===== 問題提起 ===== */
+.problems { background: var(--bg-light); }
+.problem-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px; max-width: 900px; margin: 0 auto;
+}
+.problem-card {
+  background: #fff; border-radius: 12px; padding: 22px 20px;
+  border-left: 4px solid #e74c3c;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+.problem-card p { color: #555; line-height: 1.7; }
+.problem-card p::before { content: "\274C  "; }
+.section-img-wrap {
+  margin-top: 40px; border-radius: 16px; overflow: hidden; max-height: 300px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+.section-img-wrap img { width: 100%; height: 300px; object-fit: cover; }
+
+/* ===== 強みカード ===== */
+.strengths-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px; max-width: 1000px; margin: 0 auto;
+}
+.strength-card {
+  background: #fff; border-radius: 16px; padding: 32px 22px;
+  text-align: center; box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+  transition: transform 0.3s;
+}
+.strength-card:hover { transform: translateY(-5px); }
+.strength-icon { font-size: 2.4rem; margin-bottom: 14px; }
+.strength-num { font-size: 2.4rem; font-weight: 900; color: var(--primary); margin-bottom: 10px; }
+.strength-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+.strength-card p { color: #666; font-size: 0.88rem; line-height: 1.7; }
+
+/* ===== お客様の声 ===== */
+.testimonials { background: var(--bg-light); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 22px; }
+.testimonial-card {
+  background: #fff; border-radius: 16px; padding: 28px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.07);
+}
+.testimonial-stars { color: #f39c12; font-size: 1.15rem; margin-bottom: 10px; }
+.testimonial-card blockquote { color: #555; line-height: 1.8; margin-bottom: 14px; font-size: 0.93rem; }
+.testimonial-card blockquote::before { content: "\300C"; font-size: 1.3rem; color: var(--primary); }
+.testimonial-card blockquote::after  { content: "\300D"; font-size: 1.3rem; color: var(--primary); }
+.testimonial-author { font-weight: 700; color: #333; font-size: 0.88rem; }
+
+/* ===== ギャラリー ===== */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.gallery-grid img { width: 100%; height: 210px; object-fit: cover; border-radius: 10px; transition: transform 0.3s; }
+.gallery-grid img:hover { transform: scale(1.03); }
+@media(max-width:600px){ .gallery-grid { grid-template-columns: 1fr 1fr; } }
+
+/* ===== 流れ ===== */
+.flow-steps {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 18px; max-width: 1000px; margin: 0 auto;
+}
+.flow-step { text-align: center; }
+.flow-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--primary); color: #fff;
+  font-size: 1.4rem; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+.flow-step h3 { font-weight: 700; margin-bottom: 7px; }
+.flow-step p { color: #666; font-size: 0.88rem; line-height: 1.6; }
+
+/* ===== FAQ ===== */
+.faq-list { max-width: 750px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid #eee; overflow: hidden; }
+.faq-question {
+  width: 100%; text-align: left; padding: 18px 0;
+  background: none; border: none; cursor: pointer;
+  font-size: 0.97rem; font-weight: 700; color: #333;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.faq-question::before { content: "Q. "; color: var(--primary); margin-right: 8px; flex-shrink: 0; }
+.faq-icon { font-size: 1.3rem; color: var(--primary); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-answer p { padding: 0 0 18px 0; color: #555; line-height: 1.75; }
+
+/* ===== プロフィール ===== */
+.profile { background: var(--bg-light); }
+.profile-inner {
+  max-width: 880px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center;
+}
+.profile-image img { width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 1; }
+.profile-name { font-size: 1.5rem; font-weight: 900; margin-bottom: 5px; }
+.profile-title-text { color: var(--primary); font-weight: 700; margin-bottom: 20px; }
+.profile-bio { color: #555; line-height: 1.9; }
+@media(max-width:600px){ .profile-inner { grid-template-columns: 1fr; } }
+
+/* ===== 最終CTA ===== */
+.final-cta {
+  background-image: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)), url('https://picsum.photos/seed/beautysalonbg/1200/800');
+  background-size: cover; background-position: center;
+  padding: 100px 5%; text-align: center; color: #fff;
+}
+.final-cta h2 { font-size: clamp(1.4rem, 3vw, 2.4rem); font-weight: 900; margin-bottom: 18px; }
+.final-cta p { font-size: 1.05rem; opacity: 0.92; margin-bottom: 38px; line-height: 1.7; }
+.final-cta-btn {
+  display: inline-block; background: var(--accent);
+  color: #fff; padding: 20px 60px;
+  border-radius: 50px; font-size: 1.15rem; font-weight: 900;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  transition: all 0.3s;
+}
+.final-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+.final-cta-sub { margin-top: 18px; font-size: 0.88rem; opacity: 0.8; }
+
+/* ===== フッター ===== */
+footer { background: #1a1a2e; color: #aaa; padding: 48px 5%; text-align: center; }
+.footer-logo { font-size: 1.2rem; font-weight: 900; color: #fff; margin-bottom: 18px; }
+.footer-links { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 18px; }
+.footer-links a { color: #aaa; font-size: 0.88rem; }
+.footer-links a:hover { color: #fff; }
+.footer-copy { font-size: 0.82rem; }
+
+/* ===== 固定CTAバー ===== */
+.fixed-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+  background: var(--primary); padding: 11px 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+}
+.fixed-cta-text { color: #fff; font-weight: 700; font-size: 0.92rem; }
+.fixed-cta-btn {
+  background: var(--accent); color: #fff;
+  padding: 11px 28px; border-radius: 28px;
+  font-weight: 900; font-size: 0.92rem; white-space: nowrap;
+}
+@media(max-width:480px){
+  .fixed-cta-text { font-size: 0.78rem; }
+  .fixed-cta-btn { padding: 9px 18px; font-size: 0.82rem; }
+}
+
+/* ===== フェードイン ===== */
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-logo">リラクゼーションサロン Bloom</div>
+  <ul class="nav-links">
+    <li><a href="#strengths">強み</a></li>
+    <li><a href="#testimonials">お客様の声</a></li>
+    <li><a href="#flow">流れ</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#cta" class="nav-cta">初回0円体験を今すぐ予約する</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="hero-badge">累計3,500名施術・リピート率94%・口コミ評価4.9</span>
+    <h1>「ママ、最近キレイになったね」と言われる主婦が続出中。1日30分で疲れた体と心をリセット</h1>
+    <p class="hero-sub">家事・育児・仕事に追われる毎日から、たった30分で「私だけの時間」を取り戻しませんか？</p>
+    <a href="#" class="hero-cta">初回0円体験を今すぐ予約する</a>
+  </div>
+  <div class="hero-scroll"><span></span></div>
+</section>
+
+<div class="stats fade-in">
+      <div class="stat-item">
+        <span class="stat-number" data-target="3500">0</span><span class="stat-unit">名</span>
+        <p class="stat-label">累計施術実績</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="94">0</span><span class="stat-unit">%</span>
+        <p class="stat-label">リピート率</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="0">0</span><span class="stat-unit">円</span>
+        <p class="stat-label">初回体験価格</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="4.9">0</span><span class="stat-unit">点</span>
+        <p class="stat-label">口コミ評価</p>
+      </div></div>
+
+
+<section class="problems fade-in">
+  <div class="section-center">
+    <span class="section-tag">PROBLEM</span>
+    <h2 class="section-title">こんなお悩みを抱えていませんか？</h2>
+  </div>
+  <div class="problem-grid">
+    <div class="problem-card"><p>毎日の家事と育児で体がバキバキ…でも自分の時間なんて取れない</p></div>
+      <div class="problem-card"><p>肩こり・腰痛がひどくて、夜もぐっすり眠れない日が続いている</p></div>
+      <div class="problem-card"><p>鏡を見るたびに疲れた顔の自分にため息…肌のハリも失われてきた</p></div>
+      <div class="problem-card"><p>「自分へのご褒美」に罪悪感を感じてしまい、なかなか踏み出せない</p></div>
+      <div class="problem-card"><p>エステに興味はあるけど、高額な勧誘が怖くて一歩が踏み出せない</p></div>
+      <div class="problem-card"><p>主婦だからって諦めてきたけど、本当は昔のようにキレイでいたい</p></div>
+  </div>
+  <div class="section-img-wrap" style="max-width:900px;margin:40px auto 0;">
+    <img src="https://picsum.photos/seed/beautysalonbg/1200/800" alt="リラクゼーションサロン Bloom" style="width:100%;height:300px;object-fit:cover;">
+  </div>
+</section>
+
+
+<section id="strengths" class="fade-in">
+  <div class="section-center">
+    <span class="section-tag">WHY CHOOSE US</span>
+    <h2 class="section-title">選ばれる理由</h2>
+    <p class="section-sub">忙しい主婦のために設計された、罪悪感ゼロの癒し空間</p>
+  </div>
+  <div class="strengths-grid">
+    
+      <div class="strength-card fade-in">
+        <div class="strength-icon">💎</div>
+        <div class="strength-num">01</div>
+        <h3>初回0円＆明朗会計</h3>
+        <p>高額な勧誘は一切なし。初回は完全無料で体験でき、以降も2万円からの明朗会計。家計を預かる主婦でも安心して通えます。</p>
+      </div>
+      <div class="strength-card fade-in">
+        <div class="strength-icon">🌸</div>
+        <div class="strength-num">02</div>
+        <h3>30分からのショートコース</h3>
+        <p>お子さんの習い事の送り迎えの間や、買い物のついでに立ち寄れる30分コースをご用意。忙しいあなたのスキマ時間を有効活用。</p>
+      </div>
+      <div class="strength-card fade-in">
+        <div class="strength-icon">✨</div>
+        <div class="strength-num">03</div>
+        <h3>肌質改善の実績多数</h3>
+        <p>定期的に通われている方の87%が「周りから肌がキレイになったと言われた」と回答。内側から輝く美しさを引き出します。</p>
+      </div>
+      <div class="strength-card fade-in">
+        <div class="strength-icon">🤝</div>
+        <div class="strength-num">04</div>
+        <h3>主婦スタッフが対応</h3>
+        <p>スタッフの80%が子育て経験のある主婦。あなたの大変さを理解した上で、心から寄り添った施術とカウンセリングを行います。</p>
+      </div>
+  </div>
+</section>
+
+
+<section id="testimonials" class="testimonials fade-in">
+  <div class="section-center">
+    <span class="section-tag">CUSTOMER VOICE</span>
+    <h2 class="section-title">お客様の声</h2>
+    <p class="section-sub">実際にご利用いただいた方のリアルな声です</p>
+  </div>
+  <div class="testimonials-grid">
+    
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>3人の子育てで自分のことは後回しにしてきた10年間。初めて来た時は「こんな疲れた顔だったんだ」とショックでした。でも3ヶ月通い続けたら、夫から「最近なんか若返った？」と言われ、ママ友からも「肌ツヤが全然違う！」と驚かれるように。今では月2回の施術が私の最高のご褒美です。</blockquote>
+        <p class="testimonial-author">42歳・3児の母・専業主婦</p>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>パート勤務と家事の両立で肩こりがひどく、頭痛薬が手放せませんでした。初回0円につられて来てみたら、施術後は体が嘘みたいに軽くなって感動！今は月1回通っていますが、頭痛薬を飲む回数が激減。夜もぐっすり眠れるようになり、朝の目覚めが全然違います。</blockquote>
+        <p class="testimonial-author">38歳・パート主婦・2児の母</p>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>正直、主婦がエステなんて贅沢かな…と罪悪感がありました。でもスタッフさんも同じ主婦で、「頑張ってる自分を労ってあげて」と言ってもらえて救われました。肌のくすみが取れて、ファンデーションが1トーン明るくなったのが嬉しい。娘に「ママ、お姫様みたい」と言われた時は泣きそうでした。</blockquote>
+        <p class="testimonial-author">35歳・専業主婦・1児の母</p>
+      </div>
+  </div>
+</section>
+
+<section class="fade-in">
+  <div class="section-center" style="margin-bottom:28px">
+    <span class="section-tag">GALLERY</span>
+    <h2 class="section-title">お客様のビフォーアフター</h2>
+  </div>
+  <div class="gallery-grid" style="max-width:1100px;margin:0 auto;">
+    <img src="https://picsum.photos/seed/beautysalon1/800/600" alt="リラクゼーションサロン Bloom" loading="lazy">
+      <img src="https://picsum.photos/seed/beautysalon2/800/600" alt="リラクゼーションサロン Bloom" loading="lazy">
+      <img src="https://picsum.photos/seed/beautysalon3/800/600" alt="リラクゼーションサロン Bloom" loading="lazy">
+  </div>
+</section>
+
+
+<section id="flow" class="fade-in" style="background:var(--bg-light)">
+  <div class="section-center">
+    <span class="section-tag">HOW IT WORKS</span>
+    <h2 class="section-title">ご利用の流れ</h2>
+    <p class="section-sub">初めての方でも安心。たった3ステップで癒しの時間が始まります</p>
+  </div>
+  <div class="flow-steps">
+    
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <h3>ご予約</h3>
+        <p>LINEまたはお電話で簡単予約。お子様連れOKの時間帯もご相談ください</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <h3>カウンセリング</h3>
+        <p>お悩みやご希望を丁寧にヒアリング。無理な勧誘は一切いたしません</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <h3>施術</h3>
+        <p>あなた専用のオーダーメイド施術で、日頃の疲れを芯からほぐします</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <h3>アフターケア</h3>
+        <p>自宅でできる簡単セルフケアもアドバイス。次回予約は任意です</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">5</div>
+        <h3>変化を実感</h3>
+        <p>継続することで肌質・体調の変化を実感。周りからの「キレイになったね」が増えます</p>
+      </div>
+  </div>
+</section>
+
+
+<section id="faq" class="fade-in">
+  <div class="section-center">
+    <span class="section-tag">FAQ</span>
+    <h2 class="section-title">よくある質問</h2>
+  </div>
+  <div class="faq-list">
+    
+      <div class="faq-item">
+        <button class="faq-question">本当に初回0円ですか？追加料金はかかりませんか？<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>はい、初回体験は完全無料です。追加料金や高額商品の勧誘は一切ございません。気に入っていただけた場合のみ、次回のご予約をご案内しています。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">小さな子どもがいるのですが、連れて行っても大丈夫ですか？<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>平日午前中はお子様連れ歓迎タイムを設けております。キッズスペースもございますので、お気軽にご相談ください。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">どのくらいの頻度で通えば効果を実感できますか？<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>個人差はありますが、月1〜2回の施術を3ヶ月続けていただくと、多くの方が肌質や体調の変化を実感されています。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">エステは初めてで緊張します。痛くないですか？<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>当サロンの施術は痛みのないリラクゼーション重視です。スタッフも子育て中の主婦が多く、初めての方にも丁寧に対応いたします。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">予約のキャンセルや変更はできますか？<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>前日までのご連絡でキャンセル・変更可能です。お子様の急な発熱など、当日のご連絡もできる限り対応いたしますのでご安心ください。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">どんな施術メニューがありますか？<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>フェイシャル、ボディ、リンパマッサージなど多彩なメニューをご用意。初回カウンセリングでお悩みに合わせた最適なコースをご提案します。</p></div>
+      </div>
+  </div>
+</section>
+
+
+<section class="profile fade-in">
+  <div class="profile-inner">
+    <div class="profile-image">
+      <img src="https://picsum.photos/seed/beautysalonperson/400/400" alt="代表 佐藤 美咲" style="width:100%;border-radius:16px;object-fit:cover;aspect-ratio:1;">
+    </div>
+    <div class="profile-text-block">
+      <span class="section-tag">ABOUT</span>
+      <h2 class="profile-name">代表 佐藤 美咲</h2>
+      <p class="profile-title-text">エステティシャン歴15年・日本エステティック協会認定資格保有・3児の母</p>
+      <p class="profile-bio">大手エステサロンで10年間、延べ8,000名以上の施術を担当。結婚・出産を経て「頑張るママたちが気軽に通える癒しの場所を作りたい」という想いから当サロンを開業しました。私自身も3人の子育てをしながら働く母親です。家事、育児、仕事に追われて自分のことは後回しにしてしまう気持ち、痛いほどわかります。だからこそ、このサロンでは「主婦でも罪悪感なく通える」をコンセプトに、明朗会計・短時間コース・お子様連れOKの環境を整えました。あなたの「キレイになりたい」を全力でサポートします。</p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" id="cta">
+  <h2>今日から始める「私だけの時間」</h2>
+  <p>毎日頑張っているあなたへ。初回0円で、プロの施術を体験してみませんか？</p>
+  <a href="#" class="final-cta-btn">初回0円体験を今すぐ予約する</a>
+  <p class="final-cta-sub">今月限定：初回0円体験は先着20名様まで｜勧誘なし・お子様連れOK</p>
+</section>
+
+<footer>
+  <div class="footer-logo">リラクゼーションサロン Bloom</div>
+  <div class="footer-links">
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">特定商取引法に基づく表記</a>
+    <a href="#">お問い合わせ</a>
+  </div>
+  <p class="footer-copy">Copyright &copy; 2026 リラクゼーションサロン Bloom All Rights Reserved.</p>
+</footer>
+
+<div class="fixed-cta">
+  <span class="fixed-cta-text">【残りわずか】初回0円体験を予約する</span>
+  <a href="#cta" class="fixed-cta-btn">初回0円体験を今すぐ予約する</a>
+</div>
+
+<script>
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('nav');
+  if (window.scrollY > 50) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+var fadeObs = new IntersectionObserver(function(es) {
+  es.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(function(el) { fadeObs.observe(el); });
+
+function countUp(el) {
+  var target = parseFloat(el.dataset.target);
+  var start = 0, step = target / 60;
+  var t = setInterval(function() {
+    start += step;
+    if (start >= target) { start = target; clearInterval(t); }
+    el.textContent = (target % 1 !== 0) ? start.toFixed(1) : Math.floor(start).toLocaleString();
+  }, 30);
+}
+var cntObs = new IntersectionObserver(function(es) {
+  es.forEach(function(e) {
+    if (e.isIntersecting) { e.target.querySelectorAll('[data-target]').forEach(countUp); cntObs.unobserve(e.target); }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stats').forEach(function(el) { cntObs.observe(el); });
+
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = btn.closest('.faq-item');
+    var ans = item.querySelector('.faq-answer');
+    if (item.classList.contains('open')) {
+      item.classList.remove('open'); ans.style.maxHeight = '0';
+    } else {
+      document.querySelectorAll('.faq-item.open').forEach(function(i) {
+        i.classList.remove('open'); i.querySelector('.faq-answer').style.maxHeight = '0';
+      });
+      item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px';
+    }
+  });
+});
+</script>
+</body>
+</html>
